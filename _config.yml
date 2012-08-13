@@ -1,0 +1,33 @@
+markdown: kramdown
+pygments: true
+safe: false
+permalink: /posts/:title.html
+exclude:
+  - README.md
+
+name: 指尖
+host: hueidou.github.com
+
+custom:
+    category:
+        note: 笔记
+        write: 记录
+    categories:
+      - name:  note
+        title: 笔记
+
+      - name: write
+        title: 记录
+
+meta:
+    author:
+        name: hueidou
+        email: hueidou163@gmail.com
+        disqus: hueidou              # Disqus缩略标识
+        gcse: 005430458944359870498:9_8fymzrt90     # Google自定义搜索标识ID
+        github: hueidou                # GitHub账号
+        gravatar: e003962a929e0917590817120dec2634  # Gravatar头像标识
+
+    disqus: disqus.com/embed.js                     # Disqus评论的JS地址
+    gapi: http://www.google.com/jsapi               # Google API地址
+    gravatar: http://en.gravatar.com/avatar/        # Gravatar头像服务器地址

@@ -40,7 +40,7 @@
 	<div class="block block-about">
 		<h3>About</h3>
 		<figure>
-			<img src="/avatar.jpg" />
+			<img src="http://cn.gravatar.com/avatar/e003962a929e0917590817120dec2634?s=48&r=x" />
 			<figcaption><strong>{{ site.meta.author.name }}</strong></figcaption>
 		</figure>
 		<p>没有华厦美衣裳 心里充满著希望</p>

@@ -40,7 +40,7 @@
 	<div class="block block-about">
 		<h3>About</h3>
 		<figure>
-			{% if site.meta.author.gravatar %}<img src="{{ site.meta.gravatar}}{{ site.meta.author.gravatar }}?s=48" />{% endif %}
+			<img src="/avatar.jpg" />
 			<figcaption><strong>{{ site.meta.author.name }}</strong></figcaption>
 		</figure>
 		<p>没有华厦美衣裳 心里充满著希望</p>

@@ -66,7 +66,7 @@
 	</div>
 </side>
 
-<script src="http://elfjs.googlecode.com/files/elf-0.4.0-min.js"></script>
+<script src="/assets/js/elf-0.4.0-min.js"></script>
 <script src="/assets/js/highlight.js"></script>
 <script src="/assets/js/hljs/languages/css.js"></script>
 <script src="/assets/js/hljs/languages/xml.js"></script>

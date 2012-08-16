@@ -12,12 +12,16 @@ custom:
     category:
         note: 笔记
         write: 记录
+        comment: 回复
     categories:
       - name:  note
         title: 笔记
 
       - name: write
         title: 记录
+
+      - name: comment
+        title: 回复
 
 meta:
     author:

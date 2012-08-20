@@ -16,3 +16,6 @@
 [SimpleGray]: https://github.com/mytharcher/SimpleGray
 [Markdown-Syntax-CN]: http://gitcafe.com/riku/Markdown-Syntax-CN/blob/master/syntax.md
 [hostapd]: http://hostap.epitest.fi/hostapd/
+[sublime]: http://www.sublimetext.com/
+[TextMate]: http://macromates.com/
+[EditPlus]: http://www.editplus.com/

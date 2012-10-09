@@ -12,6 +12,7 @@ custom:
     category:
         note: 笔记
         write: 记录
+        projects: 我的项目
         comment: 回复
     categories:
       - name:  note
@@ -19,6 +20,9 @@ custom:
 
       - name: write
         title: 记录
+
+      - name: projects
+        title: 我的项目
 
       - name: comment
         title: 回复

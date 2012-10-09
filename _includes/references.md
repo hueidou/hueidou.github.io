@@ -19,3 +19,4 @@
 [sublime]: http://www.sublimetext.com/
 [TextMate]: http://macromates.com/
 [EditPlus]: http://www.editplus.com/
+[悦读FM]: http://www.yuedu.fm/ "倾听文字的声音"

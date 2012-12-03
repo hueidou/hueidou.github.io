@@ -1,7 +1,6 @@
 ---
 layout: post
 title: Linux下的无线AP
-category: note
 tags: linux,wireless,ap,无线
 ---
 

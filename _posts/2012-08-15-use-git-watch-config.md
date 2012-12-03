@@ -1,7 +1,6 @@
 ---
 layout: post
 title: 使用git管理/etc和用户配置文件
-category: note
 tags: git,etc,config
 ---
 

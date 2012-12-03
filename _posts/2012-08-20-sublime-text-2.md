@@ -1,7 +1,6 @@
 ---
 layout: post
 title: Sublime初用
-category: note
 tags: sublime text 2,sublime,packages
 ---
 

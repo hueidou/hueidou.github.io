@@ -1,7 +1,6 @@
 ---
 layout: post
 title: LAMP编译安装
-category: note
 tags: LAMP,linux,apache,mysql,php,compile,install,编译,安装
 ---
 

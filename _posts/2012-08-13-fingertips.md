@@ -1,7 +1,6 @@
 ---
 layout: post
 title: 指尖 - 这里的第一篇
-category: note
 tags: github,jekyll,markdown,disqus,simplegray
 ---
 

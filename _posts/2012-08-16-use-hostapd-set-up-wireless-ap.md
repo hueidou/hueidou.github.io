@@ -4,6 +4,9 @@ title: Linux下的无线AP
 tags: linux,wireless,ap,无线
 ---
 
+{{ page.title }}
+================
+
 在Windows 7下建立无线AP只需要两行命令：
 
 	netsh wlan set hostednetwork mode=allow ssid=yourssid key=password

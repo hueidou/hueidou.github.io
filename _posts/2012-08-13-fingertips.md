@@ -4,6 +4,9 @@ title: 指尖 - 这里的第一篇
 tags: github,jekyll,markdown,disqus,simplegray
 ---
 
+{{ page.title }}
+================
+
 [github]/[jekyll]博客终于建立起来，写下来留记。
 
 0.	因为是新系统环境，丢失ssh-key，重新生成并添加到github里。参考[Generating SSH Keys](https://help.github.com/articles/generating-ssh-keys)

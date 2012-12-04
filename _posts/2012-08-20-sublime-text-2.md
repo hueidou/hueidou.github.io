@@ -4,6 +4,9 @@ title: Sublime初用
 tags: sublime text 2,sublime,packages
 ---
 
+{{ page.title }}
+================
+
 这几天看文章，很多提到了OS X下的[TextMate]，可是从评论中看来，一个叫[Sublime]的编辑器更让我感兴趣。尤其是看到有些[EditPlus]的用户也转向Sublime，EditPlus是我最喜欢的Windows下的编辑器，小巧，精练，自我感觉可以稍鄙视UltraEdit、EmEditor、NotePad++。
 
 由于近些天完全转向了Linux桌面，精确说是Ubuntu12.04（基本确定以后会换掉这个让我感到太多意外的发行版），Gedit启动慢，Vim还没熟练/老婆不会用，Sublime算是个希望。（也算是，如果它把致命的输入法bug修好的话）

@@ -4,6 +4,9 @@ title: LAMP编译安装
 tags: LAMP,linux,apache,mysql,php,compile,install,编译,安装
 ---
 
+{{ page.title }}
+================
+
 按着LAMP的顺序安装，Linux，Apache，Mysql，Php。
 
 ### Linux

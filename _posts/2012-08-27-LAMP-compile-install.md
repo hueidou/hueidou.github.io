@@ -9,7 +9,8 @@ tags: LAMP,linux,apache,mysql,php,compile,install,编译,安装
 
 按着LAMP的顺序安装，Linux，Apache，Mysql，Php。
 
-### Linux
+Linux
+-----
 
 安装一些开发包：
 
@@ -18,10 +19,9 @@ tags: LAMP,linux,apache,mysql,php,compile,install,编译,安装
 	aptitude install libmcrypt-dev // PHP
 	aptitude install libc6-dev gcc g++ make
 	...
-	
-### Apache
 
-#### PCRE
+PCRE
+----
 
 Perl Compatible Regular Expressions
 地址：<http://www.pcre.org/>
@@ -34,7 +34,8 @@ Perl Compatible Regular Expressions
 	make
 	make install
 
-#### Apache2
+Apache2
+-------
 
 地址：<http://www.apache.org/>
 
@@ -49,13 +50,15 @@ Perl Compatible Regular Expressions
 	make
 	make install
 
-### Mysql
+Mysql
+-----
 
 地址：<http://www.mysql.com/>
 
 	待写。
 
-### PHP
+PHP
+---
 
 地址：<http://www.php.net/>
 
@@ -85,9 +88,10 @@ Perl Compatible Regular Expressions
 	application/x-httpd-php                         php phtml
 	application/x-httpd-php-source                  phps
 
-### QA
+QA
+--
 
-#### phpMyAdmin:
+phpMyAdmin:
 
 Q：#2002 无法登录 MySQL 服务器  
 A：`如果未指定指定主机名或指定了特殊的主机名localhost，将使用Unix套接字。`  

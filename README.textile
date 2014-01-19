@@ -2,7 +2,7 @@ h1. This is the data for my blog
 
 It is automatically transformed by "Jekyll":http://github.com/mojombo/jekyll into a static site whenever I push this repository to GitHub.
 
-使用 "Tom Preston-Werner":http://tom.preston-werner.com/ 的博客作为模板，站点名称为 "San's world":http://hueidou.github.com/ 。
+使用 "Tom Preston-Werner":http://tom.preston-werner.com/ 的博客作为模板，站点名称为 "San's world":http://hueidou.github.io/ 。
 
 h1. License
 

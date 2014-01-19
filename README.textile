@@ -6,9 +6,10 @@ It is automatically transformed by "Jekyll":http://github.com/mojombo/jekyll int
 
 h1. License
 
-The following directories and their contents are Copyright hueidou163. You may not reuse anything therein without my permission:
+The following files and directories and their contents are Copyright hueidou163. You may not reuse anything therein without my permission:
 
 * _posts/
 * images/
+* favicon.ico
 
 All other directories and files are MIT Licensed. Feel free to use the HTML and CSS as you please. If you do use them, a link back to http://github.com/mojombo/jekyll would be appreciated, but is not required.

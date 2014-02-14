@@ -32,4 +32,6 @@ title: Blog with GitHub and Jekyll
 </ol>
 <p>
 
+[<img width="688px" src="/images/2012-08-20-sublime-text-2.png" alt="sublime text 2"/>][pic.sublime-text-2]
+
 <p>{{ page.date | date_to_string }}</p>

@@ -79,6 +79,7 @@ ul.posts {
 /*****************************************************************************/
 
 .site {
+  font-family: goudy old style, minion pro, bell mt, serif; 
   font-size: 110%;
   text-align: justify;
   width: 42em;
@@ -88,20 +89,24 @@ ul.posts {
 
 .title {
   color: #a00;
-  font-weight: bold;
+  *font-weight: bold;
   margin-bottom: 2em;
+  text-align: center;
 }
 
   .site .title a {
-    color: #a00;
+    font-size: 300%;
+    color: #000;
     text-decoration: none;
+    letter-spacing: 7px;
   }
 
   .site .title a:hover {
-    color: black;
+    color: #aaa;
   }
 
   .site .title a.extra {
+    font-size: 80%;
     color: #aaa;
     text-decoration: none;
     margin-left: 1em;

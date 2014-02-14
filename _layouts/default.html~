@@ -50,7 +50,7 @@
     </div>
     <div class="rss">
       <a href="/atom.xml">
-        <img width="68px" src="/images/rss.png" alt="Subscribe to Atom Feed" />
+        <img width="65px" src="/images/rss.png" alt="Subscribe to Atom Feed" />
       </a>
     </div>
   </div>

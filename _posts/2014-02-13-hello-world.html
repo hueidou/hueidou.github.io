@@ -3,21 +3,67 @@ layout: post
 title: Blog with GitHub and Jekyll
 ---
 
-<h2>{{ page.title }}</h2>
+<h1>{{ page.title }}</h1>
 
-
-<p>感谢<a href="http://www.ruanyifeng.com/blog/2012/08/blogging_with_jekyll.html" target="_blank">阮一峰</a>, <a href="https://github.com/hueidou/hueidou.github.io" target="_blank">hueidou</a>以及<a href="https://github.com/mojombo/mojombo.github.io" target="_blank">mojombo</a>!</p>
 
 <p>
-注意用Jekyll本地运行时文件[_config.yml]不能包含[baseurl](使用指定的基准网址来运行网站).
+    感谢<a href="http://www.ruanyifeng.com/blog/2012/08/blogging_with_jekyll.html" target="_blank">阮一峰</a>, <a href="https://github.com/hueidou/hueidou.github.io" target="_blank">hueidou</a>, <a href="https://github.com/mojombo/mojombo.github.io" target="_blank">mojombo</a>以及<a href="http://cwoebker.com/posts/latex-math-magic" target="_blank">cwoebker</a>!
 </p>
-
 <p>
-若创建一个没有父节点的分支gh-pages, 故在上传网页中必须包含
+    本文分四部分:
 </p>
-
+<ol style="list-style-type :decimal ;">
+    <li>
+        <p>
+            基本建立博客;
+        </p>
+    </li>
+    <li>
+        <p>
+            本地编译;
+        </p>
+    </li>
+    <li>
+        <p>
+            数学公式;
+        </p>
+    </li>
+    <li>
+        <p>
+            <code>favicon.ico</code>;
+        </p>
+    </li>
+</ol>
 <p>
-为提高书写效率及学习,
+    预备知识: <a href="http://rogerdudler.github.io/git-guide/index.zh.html" target="_blank">git简易入门</a>
+</p>
+<p>
+    基本命令基本建立博客有两种途径:
+</p>
+<ol style="list-style-type :decimal ;">
+    <li>
+        <p>
+            白手起家, 参见<a href="http://www.ruanyifeng.com/blog/2012/08/blogging_with_jekyll.html" target="_blank">阮一峰</a>. 注意此方法之后识别<code>.css</code>或加载图象会出问题, 目前猜测可能是<code>markdown</code>的方式, 或<code>baseurl</code>, 或在GitHub中文件都放在<code>gh-pages</code>而非<code>master</code>下, 或其他(到底为何, 还请不吝赐教), 另, <code>baseurl</code>会影响本地编译, 本地编译时可暂时去除;
+        </p>
+    </li>
+    <li>
+        <p>
+            从别人的模板开始, 以hueidou的博客为例, 更多请见<a href="https://github.com/jekyll/jekyll/wiki/Sites" target="_blank">Jekyll wiki</a>. 首先进入<a href="https://github.com/hueidou" target="_blank">hueidou的GitHub主页</a>, 点击他的博客的那个repository:<code>hueidou.github.io</code>, 点击右上角<code>Fork</code>. 转回自己GitHub主页, 将repository:<code>hueidou.github.io</code>名称修改为<code>yourusername.github.io</code>即创建完成. 在新的网页窗口中打开<code>yourusername.github.io</code>即是自己的博客主页. 之后将这个repository用git <code>clone</code>到本地, 根据自己需求进行修改. 注意, 应删除hueidou声明的私人部分.
+        </p>
+    </li>
+</ol>
+<p>
+    本地编译, 参见<a href="https://help.github.com/articles/using-jekyll-with-pages" target="_blank">Using Jekyll with Pages</a>, <a href="http://jekyllrb.com/" target="_blank">Jekyll</a>.
+</p>
+<p>
+    数学公式, 参见<a href="http://cwoebker.com/posts/latex-math-magic" target="_blank">LaTeX Math Magic</a>, <a href="http://docs.mathjax.org/en/latest/options/tex2jax.html" target="_blank">Mathjax docs</a>. 注意<code>tex2jax</code>的两个语句用<code>,</code>而非<code>;</code>隔开.
+</p>
+<p>
+    <code>favicon.ico</code>, 注意应是16*16px的, 原图像不是正方形的生成后可能用不了. 另, 一时显示不出来可能缓存问题, 重启浏览器即可.
+</p>
+<p>
+    为提高书写效率及学习,<br />
+</p>
 <ol style="list-style-type :decimal ;">
     <li>
         <p>
@@ -30,8 +76,11 @@ title: Blog with GitHub and Jekyll
         </p>
     </li>
 </ol>
+<p>
+    <br />
 </p>
 <p>
-如上折腾一天也没解决[.css]文件以及插入图片的问题, 郁闷到最后决定采取完全[clone]<a href="https://github.com/hueidou/hueidou.github.io" target="_blank">hueidou</a>的案例, 而后和之前做法对比. 发现并没有创建[gh-pages]也没添加[baseurl]. 一个人要是走了一整天, 黄昏的时候走到了, 也该满足了.
+一个人要是走了一整天, 黄昏的时候走到了, 也该满足了.
 </p>
+
 <p>{{ page.date | date_to_string }}</p>

@@ -161,6 +161,7 @@ ul.posts {
 
   #post h1, h2, h3, h4, h5, h6 {
     padding-top: 10px;
+    font-size: 125%;
   }
 
   #post pre {

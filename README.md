@@ -1,4 +1,4 @@
-h1. This is the data for my blog
+h1. 这里放置着我的[博客](http://hueidou.github.io/)数据
 
 It is automatically transformed by "Jekyll":http://github.com/mojombo/jekyll into a static site whenever I push this repository to GitHub.
 

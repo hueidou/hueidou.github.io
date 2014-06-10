@@ -1,7 +1,7 @@
 ---
 layout: post
 title: LAMP编译安装
-tags: LAMP,linux,apache,mysql,php,compile,install,编译,安装
+tags: LAMP linux apache mysql php compile install 编译 安装
 ---
 
 {{ page.title }}

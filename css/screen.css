@@ -103,3 +103,78 @@ content: "\2014 \2009";
         color: gray;
         text-align: center;
         }
+
+/*****************************************************************************/
+/*
+/* Site
+/*
+/*****************************************************************************/
+
+.site {
+  font-family: goudy old style, minion pro, bell mt, serif; 
+  font-size: 110%;
+  text-align: justify;
+  width: 42em;
+  margin: 3em auto 2em auto;
+  line-height: 1.5em;
+}
+
+.title {
+  color: #a00;
+  *font-weight: bold;
+  margin-bottom: 2em;
+  text-align: center;
+}
+
+  .site .title a {
+    font-size: 300%;
+    color: #000;
+    text-decoration: none;
+    letter-spacing: 7px;
+  }
+
+  .site .title a:hover {
+    color: #aaa;
+  }
+
+  .site .title a.extra {
+    font-size: 80%;
+    color: #aaa;
+    text-decoration: none;
+    margin-left: 1em;
+  }
+
+  .site .title a.extra:hover {
+    color: black;
+  }
+
+  .site .meta {
+    color: #aaa;
+  }
+
+  .site .footer {
+    font-size: 80%;
+    color: #666;
+    border-top: 4px solid #eee;
+    margin-top: 2em;
+    overflow: hidden;
+  }
+
+    .site .footer .contact {
+      float: left;
+      margin-right: 3em;
+    }
+
+      .site .footer .contact a {
+        color: #8085C1;
+      }
+
+    .site .footer .rss {
+      margin-top: 1.1em;
+      margin-right: -.2em;
+      float: right;
+    }
+
+      .site .footer .rss img {
+        border: 0;
+      }

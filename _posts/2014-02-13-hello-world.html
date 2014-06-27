@@ -1,86 +1,276 @@
----
-layout: post
-title: Blog with GitHub and Jekyll
----
-
-<h1>{{ page.title }}</h1>
-
-
-<p>
-    感谢<a href="http://www.ruanyifeng.com/blog/2012/08/blogging_with_jekyll.html" target="_blank">阮一峰</a>, <a href="https://github.com/hueidou/hueidou.github.io" target="_blank">hueidou</a>, <a href="https://github.com/mojombo/mojombo.github.io" target="_blank">mojombo</a>以及<a href="http://cwoebker.com/posts/latex-math-magic" target="_blank">cwoebker</a>!
-</p>
-<p>
-    本文分四部分:
-</p>
-<ol style="list-style-type :decimal ;">
-    <li>
-        <p>
-            基本建立博客;
-        </p>
-    </li>
-    <li>
-        <p>
-            本地编译;
-        </p>
-    </li>
-    <li>
-        <p>
-            数学公式;
-        </p>
-    </li>
-    <li>
-        <p>
-            <code>favicon.ico</code>;
-        </p>
-    </li>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css" />
+  <meta name="generator" content="pandoc" />
+  <meta name="author" content="墨轩" />
+  <meta name="date" content="2014-06-24" />
+  <title>积分不等式</title>
+  <style type="text/css">code{white-space: pre;}</style>
+  <link rel="stylesheet" href="pandoc.css" type="text/css" />
+  <script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
+</head>
+<body>
+<div id="header">
+<h1 class="title">积分不等式</h1>
+<h2 class="author">墨轩</h2>
+<h3 class="date">2014-06-24</h3>
+</div>
+<div id="TOC">
+<ul>
+<li><a href="#引言">引言</a></li>
+<li><a href="#young-不等式">Young 不等式</a></li>
+<li><a href="#young不等式非最佳情形">Young不等式非最佳情形</a></li>
+<li><a href="#young不等式最佳情形">Young不等式最佳情形</a><ul>
+<li><a href="#习题6的证明">习题6的证明</a></li>
+</ul></li>
+<li><a href="#hls-inequality">HLS inequality</a><ul>
+<li><a href="#l_wqmathbbrn的范数"><span class="math">\(L_w^q(\mathbb{R}^n)\)</span>的范数</a></li>
+</ul></li>
+<li><a href="#弱型young不等式">弱型Young不等式</a></li>
+<li><a href="#hls-非最佳情形">HLS 非最佳情形</a></li>
+<li><a href="#共形变换和球极投影">共形变换和球极投影</a></li>
+<li><a href="#hls-不等式的共形不变性">HLS 不等式的共形不变性</a></li>
+<li><a href="#竞争对称性">竞争对称性</a></li>
+<li><a href="#hls-最佳情形证明">HLS 最佳情形证明</a></li>
+</ul>
+</div>
+<hr />
+<h2 id="引言"><a href="#引言">引言</a></h2>
+<blockquote>
+<p>九十年代Lieb来数学所开会，见杨振宁有车接送就提议自己也必须有车接送。葛老师予以拒绝并给出三个理由：一杨振宁是诺贝尔奖而Lieb不是，二杨振宁的车是自己租的，三当时数学所条件不太好。北大物院田光善是Lieb的学生，葛老师对他说这样的以后就不要来开会了。田光善是喜欢段子的，能讲段子的学生还会加分。但不曾想他自己也进了段子。</p>
+</blockquote>
+<p>这个算稿主要是给出书中一些步骤的计算细节。有些内容是跨页的，阅读时可按章节和公式标号。因时间关系只能讲这一次，先讲整体的思路，而后细节能讲多少随缘，的确有很多洞需要填。</p>
+<p>第二章建立在凸集理论上的积分不等式的成立条件和最佳常数均较易得到，而本章给出的积分不等式更加复杂。研究最佳常数对硬分析很重要，硬分析是指傅里叶分析调和分析等，软分析是指泛函分析。另一点是能看到几何与分析的交互作用。 本章主要讨论两个不等式：Young不等式和HLS不等式。分别就其有无最佳情形给予证明，从中可见最佳常数和最优解求解的困难。也可以体会到对称性（故和几何有关）和先验地利用最优在消解整个问题的过程中起到的作用。比如，由重排不等式可先要求最优解是对称递减的，虽然不是对称递减的也可以是最优解。</p>
+<p>Guass function <span class="math">\(g: \mathbb{R}^n \to \mathbb{C}\)</span> <span class="math">\[
+g(x) = \exp\{-x^TAx + ix^TBx + Jx + C\},
+\]</span> where <span class="math">\(A\)</span> is positive definite, <span class="math">\(B\)</span> is real symmetrical. If <span class="math">\(g \in L^p(\mathbb{R}^n)\)</span> for some <span class="math">\(p\)</span>, then <span class="math">\(A\)</span> must be positive definite.</p>
+<p>若某一维只有一次项必然发散，假设均有二次项。对角化后分离变量，每个积分项必须形如<span class="math">\(\int e^{-a(x-b)^2 + c}\)</span>否则发散。虚数项只影响辐角不影响范数，故不加考虑。</p>
+<h2 id="young-不等式"><a href="#young-不等式">Young 不等式</a></h2>
+<p>非最佳情形的证明是简单的，最佳情形的证明思路为：先逼近；将逼近情形分解；旋转后仍可分解推出最优解是高斯函数；证明的确可以逼近最佳常数并将最优解代入求出。</p>
+<ol style="list-style-type: decimal">
+<li><span class="math">\(1/p + 1/q = 2 - 1/r = 1 + 1/r&#39;\)</span>；</li>
+<li>从形式上可见和 3.7 Riesz 重排不等式有关；</li>
+<li>最佳常数形式似乎提示每一维贡献一因子<span class="math">\(C_p C_q C_r\)</span>，故证明可能涉及到将问题分解，进而归纳证明；</li>
+<li>极大元是高斯函数，具有一定对称性。开头只是罗列最佳常数和极大元，其推导见证明；</li>
+<li><p>注一在证明中应能见到。注二是用另一不等式进行估计并改写原不等式，公式四代入后利用了注一， <span class="math">\[
+LSH = ||g\ast h||_{p&#39;}^{p&#39;} \leq RSH = C_{p,q,r;n} ||f||_p ||g||_q ||h||_r =  C_{p,q,r;n} ||g\ast h||_{p&#39;}^{p&#39;/p} ||g||_q ||h||_r,
+\]</span> 化简并<span class="math">\(p\to p&#39;\)</span>即得。 注二的理解：由 2.3(iia) 知<span class="math">\(|g\ast h| = \lambda_1 |f|^{p-1} = \lambda_1 |f|^{p&#39;/p}\)</span>，故<span class="math">\(|f| = 1/\lambda_1 |g\ast h|^{p/p&#39;}\)</span>。在差一常数的意义下得书中形式。又由2.3(i)，<span class="math">\(f(g\ast h) = e^{i\theta} |f||g\ast h|\)</span>，在相差一常数意义下可省去常数<span class="math">\(\theta\)</span>，即<span class="math">\(f, g\ast h\)</span>辐角相反。</p></li>
+<li><p>p88.(4): <span class="math">\(I(f,g,h) = \int_{\mathbb{R}^n} \int_{\mathbb{R}^n} f(x)g(x-y)h(y)dxdy\)</span>, by Fubini thm, <span class="math">\[I(f,g,h_R) = \int_{\mathbb{R}^n} \int_{\mathbb{R}^n} g(x)f(x-y)h(-y)dxdy = \int_{\mathbb{R}^n} h(y)\left(\int_{\mathbb{R}^n} g(x)f(x+y)dx\right)dy\\
+= \int_{\mathbb{R}^n} h(y)\left(\int_{\mathbb{R}^n} g(x-y)f(x)dx\right)dy = I(f,g,h).\]</span> By <span class="math">\(g\ast h = h \ast g\)</span>, <span class="math">\(I(f,g,h) = I(f,h,g)\)</span>. After all, <span class="math">\(I(f,g,h) = I(f,h,g) = I(h,f,g_R) = I(h,g_R,f)\)</span>.</p></li>
 </ol>
-<p>
-    预备知识: <a href="http://rogerdudler.github.io/git-guide/index.zh.html" target="_blank">git简易入门</a>
-</p>
-<p>
-    基本命令基本建立博客有两种途径:
-</p>
-<ol style="list-style-type :decimal ;">
-    <li>
-        <p>
-            白手起家, 参见<a href="http://www.ruanyifeng.com/blog/2012/08/blogging_with_jekyll.html" target="_blank">阮一峰</a>. 注意此方法之后识别<code>.css</code>或加载图象会出问题, 目前猜测可能是<code>markdown</code>的方式, 或<code>baseurl</code>, 或在GitHub中文件都放在<code>gh-pages</code>而非<code>master</code>下, 或其他(到底为何, 还请不吝赐教), 另, <code>baseurl</code>会影响本地编译, 本地编译时可暂时去除;
-        </p>
-    </li>
-    <li>
-        <p>
-            从别人的模板开始, 以hueidou的博客为例, 更多请见<a href="https://github.com/jekyll/jekyll/wiki/Sites" target="_blank">Jekyll wiki</a>. 首先进入<a href="https://github.com/hueidou" target="_blank">hueidou的GitHub主页</a>, 点击他的博客的那个repository:<code>hueidou.github.io</code>, 点击右上角<code>Fork</code>. 转回自己GitHub主页, 将repository:<code>hueidou.github.io</code>名称修改为<code>yourusername.github.io</code>即创建完成. 在新的网页窗口中打开<code>yourusername.github.io</code>即是自己的博客主页. 之后将这个repository用git <code>clone</code>到本地, 根据自己需求进行修改. 注意, 应删除hueidou声明的私人部分.
-        </p>
-    </li>
+<h2 id="young不等式非最佳情形"><a href="#young不等式非最佳情形">Young不等式非最佳情形</a></h2>
+<ol start="7" style="list-style-type: decimal">
+<li>最一般的Young不等式， 其原文定理6.2对 <span class="math">\(p_i\)</span> 没有要求。p89，矩阵 <span class="math">\(B\)</span> 的选取见 3.8节末，另也可直接验证。可证和可算是不一样的，可算在实际应用中更有意义。</li>
+<li>没有最佳常数情形的证明主要用到2.3 Holder不等式一节注(2)，应用前需要先做如(9)变形，注意到<span class="math">\(p(1/r&#39;+1/q&#39;) = 1\)</span>等即可。中间用到Fubini定理。</li>
 </ol>
-<p>
-    本地编译, 参见<a href="https://help.github.com/articles/using-jekyll-with-pages" target="_blank">Using Jekyll with Pages</a>, <a href="http://jekyllrb.com/" target="_blank">Jekyll</a>.
-</p>
-<p>
-    数学公式, 参见<a href="http://cwoebker.com/posts/latex-math-magic" target="_blank">LaTeX Math Magic</a>, <a href="http://docs.mathjax.org/en/latest/options/tex2jax.html" target="_blank">Mathjax docs</a>. 注意<code>tex2jax</code>的两个语句用<code>,</code>而非<code>;</code>隔开.
-</p>
-<p>
-    <code>favicon.ico</code>, 注意应是16*16px的, 原图像不是正方形的生成后可能用不了. 另, 一时显示不出来可能缓存问题, 重启浏览器即可.
-</p>
-<p>
-    为提高书写效率及学习,<br />
-</p>
-<ol style="list-style-type :decimal ;">
-    <li>
-        <p>
-            可以在其他支持直观书写和HTML书写的博客网站编写完毕后储存到本地;
-        </p>
-    </li>
-    <li>
-        <p>
-            或者寻求其他方便的编译器或插件;
-        </p>
-    </li>
+<h2 id="young不等式最佳情形"><a href="#young不等式最佳情形">Young不等式最佳情形</a></h2>
+<h3 id="习题6的证明"><a href="#习题6的证明">习题6的证明</a></h3>
+<p>用到了（类似）对角线法则和分段控制的思想。</p>
+<p>Since <span class="math">\(\{g_i\} \rightharpoonup g, \{h_i\} \rightharpoonup h\)</span>, <span class="math">\(\int fg_ih_i - \int f gh = \int f(g-g_i)h_i + \int fg(h_i - h)\)</span>. Choose a subsequence of <span class="math">\(\{g_i\}\)</span> (denote as <span class="math">\(\{g_i\}\)</span> also)such that <span class="math">\(\forall j, |\int f(g-g_i)h_j| \leq 1/2^i\)</span>, of course, <span class="math">\(|\int f(g-g_i)h_i| \leq 1/2^i\)</span>. Then <span class="math">\(\int f(g-g_i)h_i \to 0\)</span>, <span class="math">\(\int fg(h_i - h) \to 0\)</span>. Let <span class="math">\(f = J_n^{\epsilon,\delta}(x,y,z)\)</span>, we have proven that <span class="math">\(K_{g_i,h_i}^{\epsilon,\delta}\)</span> converges to <span class="math">\(K_{g,h}^{\epsilon,\delta}\)</span> by point. By the estimation in (A), since <span class="math">\(J \leq e^{-\delta x^2}\)</span>, <span class="math">\(K_{g_i,h_i}^{\epsilon,\delta}\)</span> is uniformly bounded. Similarly for <span class="math">\(\gamma \in (0, \delta)\)</span>, i.e., <span class="math">\(e^{\gamma x^2} K_{g_i,h_i}^{\epsilon,\delta}\)</span> converges to <span class="math">\(e^{\gamma x^2} K_{g,h}^{\epsilon,\delta}\)</span> by point, and <span class="math">\(e^{\gamma x^2} K_{g_i,h_i}^{\epsilon,\delta}\)</span> is uniformly bounded. So <span class="math">\(e^{\gamma x^2} K_{g,h}^{\epsilon,\delta}\)</span> is bounded.</p>
+<p>Then <span class="math">\(\forall \epsilon &gt; 0, \exists r_\epsilon &gt; 0\)</span> such that <span class="math">\[
+\int_{\mathbb{R}^n - B(r_\epsilon)} |K_{g_i,h_i}^{\epsilon,\delta}|^p dx &lt; \frac{\epsilon^p}{4}, \int_{\mathbb{R}^n - B(r_\epsilon)} |K_{g,h}^{\epsilon,\delta}|^p dx &lt; \frac{\epsilon^p}{4}, 
+\]</span> and in <span class="math">\(B(r_\epsilon)\)</span>, by Lebesgue thm, <span class="math">\(\exists I\)</span>, such that when <span class="math">\(i &gt; I\)</span> <span class="math">\[
+\int_{B(r_\epsilon)} |K_{g_i,h_i}^{\epsilon,\delta} - K_{g,h}^{\epsilon,\delta}|^p  dx &lt; \frac{\epsilon^p}{2}.
+\]</span> That is, <span class="math">\(||K_{g_i,h_i}^{\epsilon,\delta} - K_{g,h}^{\epsilon,\delta}||_p &lt; \epsilon\)</span>.</p>
+<ol start="9" style="list-style-type: decimal">
+<li>有最佳常数情形的证明。极大元唯一的证明也是冗长的，[Lieb, 1990]中有细致证明，可参见，此处跳过。对最佳常数的估计用到了光滑逼近，且如前所猜用到了对维数的分解。</li>
+<li>直接计算可得<span class="math">\([(j_\epsilon \ast g) \ast h](x) = K_{g,h}^{\epsilon,0}(x)\)</span>。<span class="math">\(J_n^{\epsilon,\delta}\)</span>中<span class="math">\(-\delta x^2\)</span>是需要的，<span class="math">\(J_n^{\epsilon,\delta}\)</span>关于<span class="math">\(\delta\)</span>递减。证明中要先验地利用<span class="math">\(C_n^{\epsilon,\delta}\)</span>是最佳常数，并利用<span class="math">\(\delta = 0\)</span>时<span class="math">\[||(j_\epsilon \ast g) \ast h ||_p\leq C_{p&#39;,q,r;n}||j_\epsilon \ast g||_q ||h||_r \leq C_{p&#39;,q,r;n}|| g||_q ||h||_r.\]</span></li>
+<li><p>因<span class="math">\(j\)</span>是高斯函数非负，故<span class="math">\(||j||_1 = 1\)</span>，由2.16节可知 <span class="math">\(||j_e \ast g||_q \leq ||g||_q\)</span>.</p></li>
+<li><p>首先证明最佳常数可以取到，由<span class="math">\(||K_{g_i,h_i}^{\epsilon,\delta}||_p \to C_n^{\epsilon,\delta}\)</span>及<span class="math">\(||K_{g_i,h_i}^{\epsilon,\delta}||_p \to ||K_{g,h}^{\epsilon,\delta}||_p\)</span>知<span class="math">\(||K_{g,h}^{\epsilon,\delta}||_p \to C_n^{\epsilon,\delta}\)</span>。反证可知<span class="math">\(||g||_p = ||h||_r = 1\)</span>。即知最佳常数可以取到。</p></li>
+<li><p>下面计算最佳常数及最优解的形式。 <span class="math">\[
+C_{n+m}^{\epsilon,\delta} = \left(\int_{\mathbb{R}^{n+m}}\left|\int_{\mathbb{R}^{n+m}}\int_{\mathbb{R}^{n+m}} J_{n+m}^{\epsilon,\delta} (x,y,z) g(y) h(z) dydz\right|^p dx\right)^{1/p}\\
+= \left(\int_{\mathbb{R}^{n+m}}\left|\int_{\mathbb{R}^{2m}}\int_{\mathbb{R}^{2n}} J_{n+m}^{\epsilon,\delta} (x,y,z) g(y) h(z) dydz\right|^p dx\right)^{1/p}\\
+= \left(\int_{\mathbb{R}^{m}} \left[\int_{\mathbb{R}^{n}}\left(\int_{\mathbb{R}^{2m}} J_{m}^{\epsilon,\delta} (x_2,y_2,z_2) \int_{\mathbb{R}^{2n}} \left|J_{n}^{\epsilon,\delta} (x_1,y_1,z_1) g(y) h(z)\right| dy_1dz_1 dy_2 dz_2\right)^p dx_1\right]^{(1/p)*p} dx_2\right)^{1/p}\\
+\leq \left(\int_{\mathbb{R}^{m}} \left(\int_{\mathbb{R}^{2m}} J_{m}^{\epsilon,\delta}  (x_2,y_2,z_2)\left(\int_{\mathbb{R}^{n}} \left|\int_{\mathbb{R}^{2n}} J_{n}^{\epsilon,\delta} (x_1,y_1,z_1) g(y) h(z) dy_1dz_1\right|^p dx_1\right)^{1/p}dy_2 dz_2\right)^p  dx_2\right)^{1/p}\\
+\leq C_n^{\epsilon,\delta} C_m^{\epsilon,\delta} ||g||_q ||h||_r.
+\]</span> 最后一步两次利用原不等式。即得<span class="math">\(C_{n+m}^{\epsilon,\delta} \leq C_n^{\epsilon,\delta} C_m^{\epsilon,\delta}\)</span>，反之由书中提示直接代入(13)式计算可得。</p></li>
+<li><p>积分对应<span class="math">\(y_2, z_2\)</span>，取范数对应<span class="math">\(x_1\)</span>，由Minkowski不等式成立条件知对应分解。</p></li>
+<li><p>为了将<span class="math">\(f,g,h\)</span>平权，利用Holder不等式重新理解原不等式为 <span class="math">\[
+\int J_{m+n}^{\epsilon,\delta} (x,y,z) f(x) g(y) h(z) = \int f(x) K_{m+n}^{\epsilon,\delta}(x) dx \leq ||f||_{p&#39;} ||K_{m+n}^{\epsilon,\delta}||_p \leq C_{m+n}^{\epsilon,\delta} ||f||_{p&#39;}||g||_q||h||_r. 
+\]</span> 若使两个等号同时成立则应有<span class="math">\(f(x_1,x_2) = d[C(x_1)E(x_2)]^{p-1}\)</span>，再根据<span class="math">\(f,g,h\)</span>的对称知<em>最优解必定是一维问题最优解的乘积</em>。</p></li>
+<li><p>将问题分解后，下面是要求出具体形式。所用到的技巧在相关文章中也较常见。关键是要保持 <span class="math">\(|x-y-z|^2\)</span>, <span class="math">\[||K_{G,H}^{\epsilon,\delta}(x_1,x_2)||_p = ||K_{G,H}^{\epsilon,\delta}(\frac{x_1+x_2}{\sqrt{2}},\frac{x_1-x_2}{\sqrt{2}})||_p = ||K_{g,h}^{\epsilon,\delta}(x_1,x_2)||_p = C_{m+n}^{\epsilon,\delta}.\]</span></p></li>
+<li><p><span class="math">\(a\)</span> must be positive, since <span class="math">\(g \in L^q\)</span>.</p></li>
+<li><p>Directly computation shows that <span class="math">\[
+g_\lambda \left(\frac{x_1+x_2}{\sqrt{2}}\right) g_\lambda \left(\frac{x_1-x_2}{\sqrt{2}}\right) = (\lambda/\pi) \int_{\mathbb{R}} \int_{\mathbb{R}} e^{-\lambda\left[\left(\frac{x_1+x_2}{\sqrt{2}}-y_1 \right)^2 + \left(\frac{x_1-x_2}{\sqrt{2}}-y_2 \right)^2 \right]}g(y_1)g(y_2)dy_1 dy_2\\
+= (\lambda/\pi) \int_{\mathbb{R}} \int_{\mathbb{R}} e^{-\lambda\left[\left(\frac{x_1+x_2}{\sqrt{2}}-\frac{y_1+y_2}{\sqrt{2}} \right)^2 + \left(\frac{x_1-x_2}{\sqrt{2}}-\frac{y_1-y_2}{\sqrt{2}} \right)^2 \right]}g\left(\frac{y_1+y_2}{\sqrt{2}}\right)g\left(\frac{y_1-y_2}{\sqrt{2}}\right)dy_1 dy_2\\
+= (\lambda/\pi) \int_{\mathbb{R}} \int_{\mathbb{R}} e^{-\lambda(x-y)^2} u(y_1) v(y_2)dy_1 dy_2 = u_\lambda(x_1) v_\lambda(x_2). 
+\]</span></p></li>
+<li><p>证明<span class="math">\(g_\lambda\)</span>指数上的系数收敛。 There is three point <span class="math">\(x_1, x_2, x_3\)</span> are not the zero points of <span class="math">\(g\)</span> such that <span class="math">\[
+M = \begin{bmatrix}
+-x_1^2 &amp; 2x_1 &amp; 1\\
+-x_2^2 &amp; 2x_2 &amp; 1\\
+-x_3^2 &amp; 2x_3 &amp; 1\\
+\end{bmatrix}
+\]</span> is not degenerate, then <span class="math">\[
+(a_{\lambda_j},b_{\lambda_j},c_{\lambda_j}) M^T = Ln (g_{\lambda_j}(x_1),g_{\lambda_j}(x_2),g_{\lambda_j}(x_3)) \to (A,B,C), 
+\]</span> which means <span class="math">\[
+(a_{\lambda_j},b_{\lambda_j},c_{\lambda_j})\to (A,B,C)(M^{-1})^T = (a,b,c). 
+\]</span> <span class="math">\(a\)</span> must be positive, since <span class="math">\(g \in L^q\)</span>.</p></li>
+<li><p>对<span class="math">\(J_n^{\epsilon,\delta}(x,y,z) g(y)h(z)\)</span>用控制收敛定理得<span class="math">\[\lim_{\delta\to 0} ||K_{g,h}^{\epsilon,\delta}||_p = ||K_{g,h}^{\epsilon,0}||_p.\]</span></p></li>
+<li><p>之前的证明都是要求<span class="math">\(\delta &gt; 0\)</span>， <span class="math">\[
+C_1^{\epsilon,0} = \lim_{i\to \infty} C_1^{\epsilon,\delta_i} = \lim_{i\to \infty} ||K_{g_i,h_i}^{\epsilon,\delta_i}||_p \leq \lim_{i\to \infty} ||K_{g_i,h_i}^{\epsilon,0}||_p \leq \sup_{g,h} ||K_{g,h}^{\epsilon,0}||_p \leq C_1^{\epsilon,0},
+\]</span> so, <span class="math">\(C_1^{\epsilon,0} = \sup\{ \cdots\}\)</span>. The key point is that <span class="math">\(C_1^{\epsilon,\delta_i}\)</span> can be achieved by some <span class="math">\(g_, h_i\)</span>, then there is no issue about change the order of limits.</p></li>
+<li><p><span class="math">\(C_1^{\epsilon,0} = C_qC_rC_{p&#39;}\)</span>不是用公式(11)证明，而是用 <span class="math">\[
+\int J_1^{\epsilon,0}(x,y,z) f(x)g(y)h(z) dxdydz \leq C_n^{\epsilon,0} ||f||_{p&#39;}||g||_q||h||_r,
+\]</span> <span class="math">\(\Rightarrow\)</span> <span class="math">\[
+\int (\pi\epsilon)^{-1/2} \exp\{-(x-y-z)^2/\epsilon- a(x-a_2)^2 - b(y-b_2)^2 -c(z-c_2)^2\} dxdydz\\
+= \int (\pi\epsilon)^{-1/2} e^{-[(a+1/\epsilon)x^2 + (b+1/\epsilon)y^2 + (c+1/\epsilon)z^2 + 2(xy+xz+yz)/\epsilon + 2d(x+y+z)/\epsilon + d^2/\epsilon]} dxdydz\\
+= (\pi\epsilon)^{-1/2} \pi^{3/2} e^{-d^2/\epsilon + d^2/\epsilon^2 (1,1,1)A^{-1}(1,1,1)^T}/\sqrt{|A|},
+\]</span> where <span class="math">\(|A| = (ab+bc+ac)/\epsilon + abc, (1,1,1)A^{-1}(1,1,1)^T = (ab+bc+ac)/|A|\)</span>. <span class="math">\(\Rightarrow\)</span> <span class="math">\[
+\frac{\pi}{\sqrt{ab+bc+ac+abc\epsilon}} \exp\left[\frac{-abcd^2}{ab+bc+ac+abc\epsilon} \right]
+\]</span> and in the right hand, <span class="math">\(||f||_{p&#39;}\)</span> is only related with <span class="math">\(a, p&#39;\)</span>. So <span class="math">\(C_1^{\epsilon,0}\)</span> is not related with <span class="math">\(\epsilon\)</span> after <code>sup</code>. Note that <span class="math">\(d = a_2 + b_2 + c_2\)</span> here.</p></li>
+<li><p>最后的的逼近，关键是用到了非最佳Young不等式证明逼近时右端项是连续的。两边夹击得到 <span class="math">\(\lim_{\epsilon \to 0} C_1^{\epsilon,0} = C_{p&#39;,q,r;1}\)</span>。</p></li>
 </ol>
-<p>
-    <br />
-</p>
-<p>
-一个人要是走了一整天, 黄昏的时候走到了, 也该满足了.
-</p>
-
-<p>{{ page.date | date_to_string }}</p>
+<h1 id="hls-inequality"><a href="#hls-inequality">HLS inequality</a></h1>
+<hr />
+<p>对于HLS不等式最佳情形的证明，需要利用的有共性变换<span class="math">\(D\)</span>和重排<span class="math">\(\mathcal{R}\)</span>。在这两种变换下<span class="math">\(\mathcal{R}D\)</span>不等式是不减的，且函数强收敛到同一函数的不同倍数，即找到了一个最优解。而后先验地利用最优求出一般最优解的形式，将最优解代入即可求出最佳常数。所以开始要做一些开发对称的准备工作。并注意到共性变换<span class="math">\(D\)</span>和重排<span class="math">\(\mathcal{R}\)</span>是有一定竞争的。</p>
+<h3 id="l_wqmathbbrn的范数"><a href="#l_wqmathbbrn的范数"><span class="math">\(L_w^q(\mathbb{R}^n)\)</span>的范数</a></h3>
+<ol start="24" style="list-style-type: decimal">
+<li>1.13 层饼表示定理(3)式证明(3)(5)等价。 Denote <span class="math">\(d_f(\alpha) = |\{x:|f(x)|&gt;\alpha\}| = \mu(\{x:|f(x)|&gt;\alpha\})\)</span>, and note that <span class="math">\[
+||f||_{L(p,\infty)} = \sup_{\alpha&gt;0}\{\alpha d_f(\alpha)^{1/p}\} = \inf_{c&gt;0} \{d_f(\alpha) \leq c^p/\alpha^p, \forall \alpha&gt;0\}.
+\]</span> And <span class="math">\[
+\int_A |f| dx = \int_0^\infty \mu(\{x\in A: |f(x)|&gt;\lambda\}) d\lambda\\
+\leq \int_0^{\mu(A)^{-1/p}||f||_{L(p,\infty)}}  \mu(A) d\lambda + \int_{\mu(A)^{-1/p} ||f||_{L(p,\infty)}}^\infty d_f(\lambda) d\lambda\\
+\leq \mu(A)^{1/p&#39;} ||f||_{L(p,\infty)} + \int_{\mu(A)^{-1/p} ||f||_{L(p,\infty)}}^\infty \frac{||f||_{L(p,\infty)}^p}{\lambda^p} d\lambda\\
+= \frac{p}{p-1} \mu(A)^{1/p&#39;} ||f||_{L(p,\infty)},
+\]</span> implies that <span class="math">\[||f||_{p,w} \leq \frac{p}{p-1}  ||f||_{L(p,\infty)}.\]</span></li>
+</ol>
+<p>The other side is that, consider <span class="math">\(A = \{x: |f(x) &gt; \alpha|\}\)</span> for <span class="math">\(f \in L_w^q(\mathbb{R}^n)\)</span>, then <span class="math">\(d_f(\alpha) = \mu(A) \leq \infty\)</span>. So by definition, <span class="math">\[
+||f||_{p,w}^p \geq \left([\mu(A)]^{-1/p&#39;} \int_A |f|dx\right)^p \geq d_f(\alpha)^{-p+1} \left(\int_A \alpha dx \right)^p = \alpha^p d_f(\alpha),
+\]</span> which means that <span class="math">\[
+||f||_{L(p,\infty)} = \sup_{\alpha&gt;0}\{\alpha d_f(\alpha)^{1/p}\} \leq ||f||_{p,w}.
+\]</span></p>
+<ol start="25" style="list-style-type: decimal">
+<li>(5)式给出的是范数直接验证即可。</li>
+</ol>
+<h1 id="弱型young不等式"><a href="#弱型young不等式">弱型Young不等式</a></h1>
+<hr />
+<ol start="26" style="list-style-type: decimal">
+<li><p>3.3的(iv)保证<span class="math">\(||g||_{q,w} = ||g^*||_{q,w}\)</span>。下面证明<span class="math">\(b = b^\ast\)</span>，相当于证明<span class="math">\(b\)</span>是对称递减的。显然<span class="math">\(b\)</span>径向对称，故可只考虑一维问题。 Let <span class="math">\(0 &lt; x_1 &lt; x_2\)</span>, <span class="math">\[
+b(x_1) - b(x_2) = \int_{\mathbb{R}} [f(y-x_1) - f(y-x_2)]h(y) dy.
+\]</span> and <span class="math">\[
+\int_{-\infty}^{(x_1+x_2)/2}  [f(y-x_1) - f(y-x_2)]h(y) dy\\
+= \int_{-(x_1+x_2)/2}^\infty [f(y+x_1) - f(y+x_2)]h(y) dy \\
+= \int_{(x_1+x_2)/2}^\infty [f(y-x_2) - f(y-x_1)]h(y-x_1-x_2) dy,
+\]</span> so <span class="math">\[
+b(x_1) - b(x_2) = \int_{(x_1+x_2)/2}^\infty [f(y-x_1) - f(y-x_2)][h(y)-h(y-x_1-x_2)] dy.
+\]</span> Since <span class="math">\(|y-x_1| &gt; |y-x_2|, |y| &gt; |y-x_1-x_2|\)</span> when <span class="math">\(y &gt; (x_1+x_2)/2\)</span>, <span class="math">\(b(x_1) &gt; b(x_2)\)</span>.</p></li>
+<li><p>Formula (8) reduces the general weeak Young inequality to HLS inequality. <span class="math">\[
+\left|\int_{\mathbb{R}^n} \int_{\mathbb{R}^n} f(x-y)g(x)h(y)dxdy\right| = \left|\int_{\mathbb{R}^n} \int_{\mathbb{R}^n} (f\ast g)(y)h(y)dxdy\right| \leq ||f\ast g||_{r&#39;} ||h||_r,
+\]</span> and then replace <span class="math">\(r&#39;\)</span> with <span class="math">\(r\)</span>.</p></li>
+<li><p>Note (3): admit <span class="math">\(\int_{\mathbb{R}^n} \int_{\mathbb{R}^n} \bar{f}(x)|x-y|^{-\lambda}f(y)dxdy &gt; 0\)</span>, then assume that <span class="math">\(||f||_p = ||h||_p = 1\)</span> and <span class="math">\[\int_{\mathbb{R}^n} \int_{\mathbb{R}^n} \bar{h}(x)|x-y|^{-\lambda}f(y)dxdy  = c,\]</span> then <span class="math">\[
+\int_{\mathbb{R}^n} \int_{\mathbb{R}^n} (\bar{f}+\bar{h})(x)|x-y|^{-\lambda}(f+h)(y)dxdy\\
+= 4c + \int_{\mathbb{R}^n} \int_{\mathbb{R}^n} (\bar{f}-\bar{h})(x)|x-y|^{-\lambda}(f-h)(y)dxdy\\
+\leq c ||f+h||_p^2 \leq c(||f||_p + ||h||_p)^2 = 4c.
+\]</span> 这就说明了为何只需要考虑<span class="math">\(h = \bar{f}\)</span>的情形。</p></li>
+</ol>
+<h1 id="hls-非最佳情形"><a href="#hls-非最佳情形">HLS 非最佳情形</a></h1>
+<hr />
+<ol start="29" style="list-style-type: decimal">
+<li><p><span class="math">\[|x|^{-\lambda} = \int_0^\infty \chi_{\{|x|^{-\lambda}&gt;\tilde{c}\}}(x) d\tilde{c} = \lambda \int_0^\infty c^{-\lambda-1} \chi_{\{|x|&lt;c\}}(x) dc,\]</span> where <span class="math">\(\tilde{c} = c^{-\lambda}\)</span>.</p></li>
+<li><p>Since there are only two integrations, replacing one <span class="math">\(\chi\)</span> with <span class="math">\(1\)</span> will lead to formula (15).</p></li>
+<li><p>Firstly, copy with the integration related with <span class="math">\(c\)</span>. Formula (17) (18) is got from directly calculation.</p></li>
+<li><p>Each term in formula (19) is no less than <span class="math">\(\min\)</span>.</p></li>
+<li><p>Formula (20) needs Fubuni thm, <span class="math">\[
+\int_0^\infty v(a)^{1-\lambda/n} \int_0^\infty \chi_{\{b&gt;a^{p/r}\}} w(b) dbda = \int_0^\infty v(a)^{1-\lambda/n} \int_0^\infty \chi_{\{a&lt;b^{r/p}\}} w(b) dbda\\
+= \int_0^\infty w(s) \int_0^{s^{r/p}} v(t)^{1-\lambda/n}.
+\]</span> <span class="math">\[
+\left(\int_0^{a^{p/r}} b^{-mn/\lambda} db\right)^{\lambda/n} = \left( b^{1-mn/\lambda}/(1-mn/\lambda)|_{b = a^{p/r}}\right)^{\lambda/n} = \left(\lambda/(n-r(n-\lambda)) \right)^{\lambda/n} a^{p-1},
+\]</span> then use the formula (16), we will get formula (22). <span class="math">\[
+mn/\lambda &lt; 1 \Leftrightarrow (r-1)(1-\lambda/n) &lt; \lambda/n \Leftrightarrow (1-1/r)(1-\lambda/n) &lt; \lambda/n \cdot 1/r,
+\]</span> since <span class="math">\(\lambda/n + 1/r = 2 - 1/p &gt; 1\)</span>, then <span class="math">\[
+0 &lt; 1-1/r &lt; \lambda/n, 0 &lt; 1-\lambda/n&lt;1/r. 
+\]</span></p></li>
+</ol>
+<p><span class="math">\[I \leq c = \frac{1}{pr(1-n/\lambda)} \left(\frac{|S^{n-1}|}{n} \right)^{\lambda/n} \left[\left(\frac{\lambda/n}{1-1/p} \right)^{\lambda/n} + \left(\frac{\lambda/n}{1-1/r} \right)^{\lambda/n}\right].\]</span></p>
+<h1 id="共形变换和球极投影"><a href="#共形变换和球极投影">共形变换和球极投影</a></h1>
+<hr />
+<p>文中所说的定理可参见【Dudrovin-Fomenko-Novikov】138页定理15.2 Liouville定理，定理15.3。证明稍微有点长，但应不困难。</p>
+<p>In the proof of Young inequality, symmetry is very important, so will it do in the proof of HLS inequality.</p>
+<p>No matter transition or rotation, the action act on <span class="math">\(f,h\)</span> at the same time. (no, it is not true, can be seperately).</p>
+<ol start="34" style="list-style-type: decimal">
+<li><p>伸缩需要对<span class="math">\(f,h\)</span>同时作用。反演变换，单点紧化。公式(2)(3)直接计算，最后得反演变换保角。反共形可能是指将增加变成了减少。</p></li>
+<li><p>球极投影：<span class="math">\(1+|x|^2 = \frac{2}{1+s_{n+1}}, |x|^2 = \frac{1-s_{n+1}}{1+s_{n+1}}\)</span>. <span class="math">\[
+|\dot{u}-\dot{v}| = \frac{2}{1+|z|^2} |\dot{x}-\dot{y}| \Rightarrow \dot{u}\dot{v} = \frac{4\dot{x}\dot{y}}{(1+|x|^2)(1+|y|^2)}.
+\]</span></p></li>
+<li><p>在同一点附近，<span class="math">\(|\dot{u}|/|\dot{v}| \approx |\dot{x}|/|\dot{y}|\)</span>知小三角形边之间比例近似相等。而并非比例完全相等。又保角，故称为保形映射或共形变换。</p></li>
+<li><p>有定理表明Euclid群（平移旋转）以及伸缩和反演生成了所有共形变换。还有定理说<span class="math">\(\mathbb{R}^n\)</span>上的共形变换群同构于<span class="math">\((n+1,1)\)</span>维的Lorentz群。</p></li>
+<li><p><span class="math">\[
+\mathcal{I}\circ S^{-1}(s) = \mathcal{I}\left(\frac{s_i}{1+s_{n+1}}\right) = \left(\frac{x_i}{||x||^2}\right) = \left(\frac{x_i (1+s_{n+1})}{1-s_{n+1}}\right) = \frac{s_i}{1-s_{n+1}},
+\]</span> which implies <span class="math">\(S \circ \mathcal{I}\circ S^{-1}(s) = (s_1, \cdots, s_n, -s_{n+1})\)</span>.</p></li>
+<li><p>注意共形变换作用到函数上时为了保范公式(8)，需要配上Jacobi矩阵公式(7)。公式(12)(13)中指数<span class="math">\(2\)</span>要变成<span class="math">\(n\)</span>。</p></li>
+</ol>
+<h1 id="hls-不等式的共形不变性"><a href="#hls-不等式的共形不变性">HLS 不等式的共形不变性</a></h1>
+<ol start="40" style="list-style-type: decimal">
+<li><p><span class="math">\[
+\int_{\mathbb{S}^n} \int_{\mathbb{S}^n} |J_{\mathcal{S}^{-1}}(s)|^{1/p} |J_{\mathcal{S}^{-1}}(t)|^{1/p} |s-t|^{-\lambda} f(\mathcal{S}^{-1}(s)) h(\mathcal{S}^{-1}(t)) ds dt\\
+= \int_{\mathbb{R}^n} \int_{\mathbb{R}^n} |J_{\mathcal{S}^{-1}}(s)|^{1/p} |J_{\mathcal{S}^{-1}}(t)|^{1/p} |x-y|^{-\lambda} \left[\frac{4}{(1+|x|^2)(1+|y|^2)} \right]^{-\lambda/2} f(x) h(y) |J_{\mathcal{S}}(x)| |J_{\mathcal{S}}(y)| dx dy\\
+= \int_{\mathbb{R}^n} \int_{\mathbb{R}^n}  |x-y|^{-\lambda}  f(x) h(y) dx dy,
+\]</span> note that <span class="math">\(p = 2n/(2n-\lambda) \Rightarrow n/p = n - \lambda/2\)</span> in the last step.</p></li>
+<li><p>等距变换是指<span class="math">\(\mathbb{S}^{n}\)</span>上的等距变换，包括反演。而之前已证明在平移和伸缩下的不变，从而共形不变。</p></li>
+<li><p><span class="math">\(f\)</span>不恒为<span class="math">\(0\)</span>是重要的，否则上确界可能达不到。</p></li>
+</ol>
+<h1 id="竞争对称性"><a href="#竞争对称性">竞争对称性</a></h1>
+<hr />
+<ol start="43" style="list-style-type: decimal">
+<li><p>想要尽量利用对称性，一个是重排，另一个是共形变换。但两者有些抵触，即共形变换后不一定径向对称。举例如下： 和<span class="math">\(\vec{n}\)</span>垂直的平面就是原来的<span class="math">\(\mathbb{R}^n\)</span>。 Let <span class="math">\(\tilde{s} = D^{-1}s\)</span>, then <span class="math">\(f(\tilde{s}) \to \vec{n}\)</span>, that is <span class="math">\(D^{-1}s = \vec{n} \Rightarrow s = D\vec{n}\)</span>. <span class="math">\(c = F(s) = \left(\frac{1+|x|^2}{2}\right)^{n/p} f(s)\)</span> implies that <span class="math">\(f(s) = c \left(\frac{1+|x|^2}{2}\right)^{-n/p}\)</span>. <span class="math">\[D^{-1}s = (s_1,\cdots,s_{n+1},s_n) = \bar{s} \Rightarrow \bar{x}_i = \frac{\bar{s}_i}{1+\bar{s}_{n+1}} = \frac{s_i}{1+s_n} = \frac{2x_i}{|x+a|^2}, i\leq n-1,\]</span> <span class="math">\[\bar{x}_n = \frac{-s_{n+1}}{1+s_n} = \frac{|x|^2-1}{|x+a|^2},\]</span> and <span class="math">\(\frac{1+|\bar{x}|^2}{2} = \frac{1}{1+s_n} = \frac{1+|x|^2}{|x+a|^2}\)</span>.</p></li>
+<li><p>Denote <span class="math">\((Df)(x) = (D^\ast f)(x), (DF)(s) = F(D^{-1}s), (\mathcal{R}f)(x) = f^\ast (x)\)</span>.</p></li>
+<li><p>Then we will prove that <span class="math">\[f_k = (\mathcal{R}D)^k f \to h_f = ||f||_p h = ||f||_p \left(\frac{2}{1+|x|^2} \right)^{n/p}.\]</span></p></li>
+<li><p>Note that <span class="math">\(\mathcal{R}, D\)</span> all preserve the norm. Only need to prove the theorem in a dense subset of <span class="math">\(L^p(\mathbb{R}^n)\)</span>. Since <span class="math">\(\forall \epsilon &gt; 0, \exists K,g\)</span> such that <span class="math">\[
+||f-g||_p &lt; \epsilon/3, ||g^k-h_g||_p &lt; \epsilon/3, \forall k&gt;K.
+\]</span> Then <span class="math">\[
+||h_f - f^k||_p \leq ||h_f - h_g||_p + ||f^k - g^k||_p +||g^k-h_g||_p  &lt; \epsilon, \forall k&gt;K.
+\]</span> Since <span class="math">\(f\)</span> is bounded and <span class="math">\(h_f &gt; 0\)</span> in a bounded set, then there is a constant <span class="math">\(C\)</span> such that <span class="math">\(f(x) \leq Ch(x)\)</span>.</p></li>
+<li><p>Since <span class="math">\(D\)</span> is equivalent to a coordinate transformation, so <span class="math">\(D\)</span> preserves order.</p></li>
+<li><p><em>Helly 选择定理</em> 一致有界且支集均在某个固定区间内，故可取子列在所有有理点都收敛。再利用对称递减，它们在所有无理点也收敛。</p></li>
+<li><p><span class="math">\(g\)</span>本身径向对称，<span class="math">\(Dg\)</span>也径向对称，故由4.5节末知<span class="math">\(g = c_0 h = ||f||_p h = h_f\)</span>。并利用序列的递减性 <span class="math">\[
+||h_f - f^{k_l + 1}||_p \leq ||h_f - f^{k_l}||_p.
+\]</span></p></li>
+</ol>
+<h1 id="hls-最佳情形证明"><a href="#hls-最佳情形证明">HLS 最佳情形证明</a></h1>
+<hr />
+<ol start="50" style="list-style-type: decimal">
+<li><p>由单调收敛定理， <span class="math">\[
+||f^m||_p \to ||f||_p, \\
+\int_{\mathbb{R}^n} \int_{\mathbb{R}^n} f^m(x)|x-y|^{-\lambda} f^n(y) dxdy \to  \int_{\mathbb{R}^n} \int_{\mathbb{R}^n} f^m(x)|x-y|^{-\lambda} f(y) dxdy  \int_{\mathbb{R}^n} \int_{\mathbb{R}^n} f(x)|x-y|^{-\lambda} f(y) dxdy.
+\]</span> So <span class="math">\(\mathcal{H}(f^m) \to \mathcal{H}(f)\)</span>. Try to prove <span class="math">\(\mathcal{H}(f^m) \leq C(n,\lambda)\)</span>. 下面<span class="math">\(f\)</span>是指<span class="math">\(f^m\)</span>。之所以用<span class="math">\(f^m = \min \{f(x), mh_f(x)\}\)</span>代替<span class="math">\(f(x)\)</span>是为了能有如下控制并进而用控制收敛定理 <span class="math">\[
+(f^m)^k \leq C(1+|x|^2)^{-n/p},
+\]</span> 类似上节所做。 <span class="math">\[
+    \mathcal{H}(f^m) \leq \mathcal{H}((f^m)^k) \leq \mathcal{H}(h_{f^m}) = C(n,\lambda),
+\]</span> 由定义<span class="math">\(\mathcal{H}(h_{g}) = C(n,\lambda), \forall g\)</span>。</p></li>
+<li><p><span class="math">\(h_{g}\)</span>形式的函数能够取得等号。下面是要考虑等号取得的一般情况，故不再要求<span class="math">\(f = f^\ast\)</span>，但由重排定理(3.9)知<span class="math">\(f\)</span>至少是一对称递减函数的平移，同理<span class="math">\(Df\)</span>也是。故重排<span class="math">\(\mathcal{R}\)</span>对<span class="math">\(Df\)</span>只起到平移作用，即知<span class="math">\(\mathcal{R}D\)</span>整体是一共形变换。 <span class="math">\[
+\lim_{k\to \infty} ||f-C_k^{-1}h_f||_p = \lim_{k\to \infty} ||C_kf-h_f||_p = 0.
+\]</span> 再由引理4.8知最终<span class="math">\(f\)</span>的形式。</p></li>
+<li><p>引理4.8直接计算即可，只需注意到共形变换作用到函数上时要配有相应Jacobi行列式。 <span class="math">\[
+\left|\frac{\partial \vec{y}}{\partial \vec{x}}\right| = |x|^{-4n} Det@
+\begin{bmatrix}
+|x|^2 - 2x_1^2 &amp; -2x_1x_2 &amp; \cdots &amp; -2x_1x_n\\
+-2x_1x_2 &amp; |x|^2 - 2x_2^2&amp; \cdots &amp; -2x_2x_n\\
+\vdots &amp; \vdots &amp; \ddots &amp; \vdots \\
+-2x_1x_n &amp; -2x_2x_n &amp; \cdots &amp; |x|^2 - 2x_n^2
+\end{bmatrix}\\
+= |x|^{-4n} Det@
+\begin{bmatrix}
+1 &amp; x_1 &amp; x_2 &amp;\cdots &amp; x_n\\
+0 &amp; |x|^2 - 2x_1^2 &amp; -2x_1x_2 &amp; \cdots &amp; -2x_1x_n\\
+0 &amp; -2x_1x_2 &amp; |x|^2 - 2x_2^2&amp; \cdots &amp; -2x_2x_n\\
+\vdots &amp;\vdots &amp; \vdots &amp; \ddots &amp; \vdots \\
+0 &amp; -2x_1x_n &amp; -2x_2x_n &amp; \cdots &amp; |x|^2 - 2x_n^2
+\end{bmatrix}\\
+= |x|^{-4n} Det@
+\begin{bmatrix}
+1 &amp; x_1 &amp; x_2 &amp;\cdots &amp; x_n\\
+2x_1 &amp; |x|^2  &amp;  &amp;   &amp; \\
+2x_2 &amp;  &amp; |x|^2 &amp;   &amp; \\
+\vdots &amp;  &amp;   &amp; \ddots &amp;   \\
+2x_n &amp;   &amp;   &amp;   &amp; |x|^2
+\end{bmatrix} = |x|^{-2n}.
+\]</span></p></li>
+</ol>
+<div id="footer">
+  &copy; 2013-2015 <a href="http://ieden.gitcafe.com">Eden Harder</a>
+</div>
+</body>
+</html>

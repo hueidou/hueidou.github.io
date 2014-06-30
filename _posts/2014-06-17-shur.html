@@ -1,0 +1,46 @@
+---
+layout: post
+title: 舒尔分解的应用
+categories: [Math]
+tags: [Math,Physics]
+---
+
+<h1>{{ page.title }}</h1>
+<div id="TOC">
+<ul>
+<li><a href="#非线性不等式线性化">非线性不等式线性化</a></li>
+</ul>
+</div>
+<h2 id="非线性不等式线性化"><a href="#非线性不等式线性化">非线性不等式线性化</a></h2>
+<p>主要利用<sup><sup>[1]</sup></sup> <span class="math">\[
+M=
+\begin{bmatrix}
+A &amp; B\\
+B^T &amp; D \\
+\end{bmatrix}
+&lt;0 \Leftrightarrow A&lt;0 \&amp;\&amp; D-B^TA^{-1}B&lt;0. 
+\]</span> 举例如下：将<span class="math">\(PA_0+A_0^TP + \frac{E^T E}{\epsilon} + \epsilon PDD^TP + PBR^{-1}B^TP &lt; 0\)</span>化为线性不等式组，可得 <span class="math">\[
+\begin{bmatrix}
+-R &amp; 0 &amp; B^T P \\
+0 &amp; \frac{-I}{\epsilon}  &amp; D^T P \\
+PB &amp; PD &amp; PA_0+A_0^TP + \frac{E^T E}{\epsilon}
+\end{bmatrix} &lt; 0.
+\]</span></p>
+<blockquote>
+<p>注：<span class="math">\(M &lt; 0\)</span> 表示矩阵<span class="math">\(M\)</span>是负定的.</p>
+</blockquote>
+<p>可推广至：将<span class="math">\(C + PA_0+A_0^TP + \sum_i^n PB_i R_i^{-1}B_i^TP &lt; 0\)</span>化为线性不等式组，可得 <span class="math">\[
+\begin{bmatrix}
+-R_1 &amp; \cdots &amp; 0 &amp; B_1^T P \\
+\vdots  &amp; \ddots &amp; \vdots &amp; \vdots \\
+0 &amp; \cdots &amp; -R_n  &amp; B_n^T P \\
+PB_1 &amp; \cdots &amp; PB_n &amp; C + PA_0+A_0^TP
+\end{bmatrix} &lt; 0,
+\]</span> 其中<span class="math">\(C\)</span>是和<span class="math">\(P\)</span>无关的常数项。</p>
+<p>在第一个例子中<span class="math">\(n = 2, C = \frac{E^T E}{\epsilon}, R_1 = R, R_2 = \frac{I}{\epsilon}, B_1 = B, B_2 = D\)</span>.</p>
+<p>对于其他变型，遇到时参阅相关书籍和已发表文章。第一步是弄清要处理的事，第二步是弄清处理的思路，第三步具体实现或需要一些知识技术。</p>
+<p>参考文献： 1. 杜现昆，原永久，牛凤文，高等代数，高等教育出版社，2006年, p120。</p>
+<div id="footer">
+  &copy; 2013-2015 <a href="http://ieden.gitcafe.com">Eden Harder</a>
+</div>
+

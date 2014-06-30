@@ -6,7 +6,7 @@ title: Eden
 <div id="home">
   
     {% for category in site.categories %}
-    <h1>{{ category | first }} {{ category | last | size }}</h1>
+    <h1>{{ category | first }} <font size="-1" color="blue">{{ category | last | size }}</font></h1>
     <ul class="arc-list">
     {% for post in category.last %}
         <li><span>{{ post.date | date_to_string }}</span> &raquo; <a href="{{ post.url }}">{{ post.title }}</a></li>

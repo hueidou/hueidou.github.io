@@ -6,9 +6,15 @@ title: Eden
 <div id="home">
   <h1>Blog Posts</h1>
   <ul class="posts">
-    {% for post in site.posts %}
-      <li><span>{{ post.date | date_to_string }}</span> &raquo; <a href="{{ post.url }}">{{ post.title }}</a></li>
+    {% for category in site.categories %}
+    <h2>{{ category | first }}</h2>
+    </span>{{ category | last | size }}</span>
+    <ul class="arc-list">
+    {% for post in category.last %}
+        <li>{{ post.date | date:"%d/%m/%Y"}}<a href="{{ post.url }}">{{ post.title }}</a></li>
     {% endfor %}
+</ul>
+{% endfor %}
   </ul>
 
 </div>

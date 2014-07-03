@@ -1,0 +1,34 @@
+---
+layout: post
+title: 李-约克之混沌
+categories: [Math]
+tags: [Math,Physics]
+---
+
+<h1>{{ page.title }}</h1>
+
+</div>
+<p>In <a href="http://faculty.washington.edu/joelzy/LiYorke_period3.pdf">their inspiring paper</a>, Li-Yorke give a definition of chaos and prove the <em>Period Three Theorem</em> which says</p>
+<blockquote>
+<p>Let <span class="math">\(J\)</span> be an an interval and let <span class="math">\(F: J \to J\)</span> be continuous. Assume there is a point <span class="math">\(a \in J\)</span> for which the points <span class="math">\(b = F(a), c = F^2(a)\)</span> and <span class="math">\(d = F^3(a)\)</span>, satisfy <span class="math">\[
+d \leq a &lt; b &lt; c ~\text{or}~ d \geq a &gt; b &gt; c.
+\]</span> Then</p>
+<ol style="list-style-type: decimal">
+<li>for every <span class="math">\(k = 1, 2, \cdots\)</span> there is a periodic point in <span class="math">\(J\)</span> having period <span class="math">\(k\)</span>.</li>
+<li>Furthermore, there is an uncountable set <span class="math">\(S \subset J\)</span> (containing no periodic points), which satisfies the following conditions: For every <span class="math">\(p, q \in S\)</span> with <span class="math">\(p \neq q\)</span>, <span class="math">\[
+\lim\sup_{n\to \infty} |F^n(p) - F^n(q)| &gt; 0, \lim\inf_{n\to \infty} |F^n(p) - F^n(q)| = 0.
+\]</span> For every <span class="math">\(p \in S\)</span> and periodic point <span class="math">\(q \in J\)</span>, <span class="math">\[
+\lim\sup_{n\to \infty} |F^n(p) - F^n(q)| &gt; 0.
+\]</span></li>
+</ol>
+</blockquote>
+<p>REMARKS:</p>
+<ol style="list-style-type: decimal">
+<li>The conclusion is the Li-Yorke’s definition of chaos.</li>
+<li>Notice that if there is a periodic point with period 3, then the hypothesis of the theorem will be satisfied.</li>
+<li>Freeman Dyson approves this paper in his article <a href="http://www.ams.org/notices/200902/rtx090200212p.pdf">birds and frogs</a>: The Li-Yorke paper is one of the immortal gems in the literature of mathematics.</li>
+</ol>
+<div id="footer">
+  &copy; 2013-2015 <a href="http://ieden.gitcafe.com">Eden Harder</a>
+</div>
+

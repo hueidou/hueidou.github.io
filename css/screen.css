@@ -103,7 +103,15 @@ content: "\2014 \2009";
         color: gray;
         text-align: center;
         }
-
+/***image**/
+img{ 
+  border:0; 
+  margin:0; 
+  padding:0; 
+  max-width:62em; 
+  width:expression(this.width>150?"150px":this.width); 
+  height:expression(this.height>150?"  150px":this.height); 
+}
 /*****************************************************************************/
 /*
 /* Site

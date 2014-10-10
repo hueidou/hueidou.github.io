@@ -1,0 +1,41 @@
+---
+layout: post
+title: 空气质量
+categories: [Life]
+tags: [Life,Pollution]
+---
+
+<h1>{{ page.title }}</h1>
+<div id="TOC">
+<ul>
+<li><a href="#理论推导">理论推导</a></li>
+<li><a href="#绘图程序">绘图程序</a></li>
+<li><a href="#遗留其他">遗留其他</a></li>
+</ul>
+</div>
+<h2 id="理论推导"><a href="#理论推导">理论推导</a></h2>
+<p>若单参数曲面族为<span class="math">\(F(\vec{x},\alpha)=0\)</span>，则其包络方程为 <span class="math">\[
+F(\vec{x},\alpha(\vec{x}))=0\\
+F_\alpha(\vec{x},\alpha(\vec{x}))=0.
+\]</span> 因在给定曲面<span class="math">\(F(\vec{x},\alpha)=0\)</span>上<span class="math">\(\alpha\)</span>是定值，故 <span class="math">\[
+0 = dF(\vec{x},\alpha) = F_{\vec{x}}(\vec{x},\alpha) d\vec{x}.
+\]</span> 而对包络有 <span class="math">\[
+0 = dF(\vec{x},\alpha(\vec{x})) = F_{\vec{x}}(\vec{x},\alpha(\vec{x})) + F_\alpha(\vec{x},\alpha(\vec{x})) d\alpha(\vec{x}).
+\]</span> 一般而言<span class="math">\(d\alpha(\vec{x}) \neq 0, \forall \vec{x}\)</span>，故包络的方程完全得到。</p>
+<p><em>参见陈维桓134页。</em></p>
+<p><a href="http://gregegan.customer.netspace.net.au/SCIENCE/Catacaustics/Catacaustics.html">This blog</a>首先对参数曲线给出方法，而后对多元多项式曲线给出较分析的也许可行方法，而后又尝试用代数或几何的方法解决。最后一部分没有看明白：Finding the Catacaustic with Resultants。</p>
+<p>最后一部分是定出catacaustic的轨迹：1. 它是一族椭圆焦点的轨迹，另一个焦点是光源；2. 椭圆的方程可以用两个焦点的坐标和另外一个参数确定；3. 故最后目标是消去多余的那个参数，在剩余的表达式中提取出catacaustic的轨迹。4. <span class="math">\(Q(X, Y) =\)</span> factor that appears cubed in <span class="math">\(Disc(Tangency(X, Y, γ), γ)\)</span>. 5. 在整个推到过程中用到了计算机代数的一些概念，如结式与子结式（判定两个多项式是否有相同根）。</p>
+<h2 id="绘图程序"><a href="#绘图程序">绘图程序</a></h2>
+<p>用<a href="http://www.geogebratube.org/student/b98007">Geogebra竟然能画出如此图像</a>，果然要学习强大的Geogebra哈。自己的程序在百度云/程序/Catacaustic.nb。</p>
+<p>Consider a unit circle and a radiant point located at <span class="math">\((\mu,0)\)</span>. <span class="math">\[
+x   =   (\mu(1-3\mu \cos t+2\mu \cos^3 t))/(-(1+2\mu^2)+3\mu\cos t) \\
+y   =   (2\mu^2\sin^3t)/(1+2\mu^2-3\mu\cos t),
+\]</span> <a href="http://www.ucke.de/christian/physik/ftp/lectures/ljub96.pdf">This article</a> gives another program.</p>
+<h2 id="遗留其他"><a href="#遗留其他">遗留其他</a></h2>
+<p><a href="http://physics.stackexchange.com/questions/139504/why-the-caustic-of-a-circle-is-the-most-bright-curve-in-the-circle">SE question</a>：为何包络处最亮？</p>
+<p>Some other interesting articles: <a href="http://arxiv.org/pdf/1206.1312v1.pdf">From Pop-Up Cards to Coffee-Cup Caustics:The Knight’s Visor</a> <a href="http://arxiv.org/pdf/1406.1736.pdf">Using Rolling Circles to Generate Caustic Envelopes Resulting from Reflected Light</a></p>
+<div id="footer">
+  &copy; 2013-2015 <a href="http://ieden.gitcafe.com">Eden Harder</a>
+</div>
+</body>
+</html>

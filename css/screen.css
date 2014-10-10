@@ -20,25 +20,25 @@ pre {
 code {
     font-family: monospace;
 }
-h1 a, h3 a, h4 a, h5 a { 
+/*h1 a, h3 a, h4 a, h5 a { 
     text-decoration: none;
     color: #2980b9; 
 }
 h2 a { 
     text-decoration: none;
     color: #1abc9c; 
-}
-h1, h2, h3, h4, h5 { font-family: 'LiuKai', FZQiTi-S14S, cursive;
-                     font-weight: bold;
+}*/
+h1, h2, h3, h4, h5 { font-family: LiuKai, FZQiTi-S14S, cursive;
+                     font-weight: normal;
                      border-bottom: 1px solid black; }
-h1, h3, h4, h5 { color: #f39c12; }
-h2 {    color: #2ecc71; }
+/*h1, h3, h4, h5 { color: #f39c12; }
+h2 {    color: #2ecc71; }*/
 h1 {
-        font-size: 130%;
+        font-size: 150%;
 }
 
 h2 {
-        font-size: 110%;
+        font-size: 120%;
 }
 
 h3 {

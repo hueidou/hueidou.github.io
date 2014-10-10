@@ -13,6 +13,7 @@ tags: [Math,Physics]
 <li><a href="#遗留其他">遗留其他</a></li>
 </ul>
 </div>
+<p><img src="/images/catacaustic/refn.jpg"/></p>
 <h2 id="理论推导"><a href="#理论推导">理论推导</a></h2>
 <p>若单参数曲面族为<span class="math">\(F(\vec{x},\alpha)=0\)</span>，则其包络方程为 <span class="math">\[
 F(\vec{x},\alpha(\vec{x}))=0\\
@@ -22,7 +23,7 @@ F_\alpha(\vec{x},\alpha(\vec{x}))=0.
 \]</span> 而对包络有 <span class="math">\[
 0 = dF(\vec{x},\alpha(\vec{x})) = F_{\vec{x}}(\vec{x},\alpha(\vec{x})) + F_\alpha(\vec{x},\alpha(\vec{x})) d\alpha(\vec{x}).
 \]</span> 一般而言<span class="math">\(d\alpha(\vec{x}) \neq 0, \forall \vec{x}\)</span>，故包络的方程完全得到。</p>
-<p><em>参见陈维桓134页。</em></p>
+<p><em>参见陈维桓《微分几何》（红皮）134页。</em></p>
 <p><a href="http://gregegan.customer.netspace.net.au/SCIENCE/Catacaustics/Catacaustics.html">This blog</a>首先对参数曲线给出方法，而后对多元多项式曲线给出较分析的也许可行方法，而后又尝试用代数或几何的方法解决。最后一部分没有看明白：Finding the Catacaustic with Resultants。</p>
 <p>最后一部分是定出catacaustic的轨迹：1. 它是一族椭圆焦点的轨迹，另一个焦点是光源；2. 椭圆的方程可以用两个焦点的坐标和另外一个参数确定；3. 故最后目标是消去多余的那个参数，在剩余的表达式中提取出catacaustic的轨迹。4. <span class="math">\(Q(X, Y) =\)</span> factor that appears cubed in <span class="math">\(Disc(Tangency(X, Y, γ), γ)\)</span>. 5. 在整个推到过程中用到了计算机代数的一些概念，如结式与子结式（判定两个多项式是否有相同根）。</p>
 <h2 id="绘图程序"><a href="#绘图程序">绘图程序</a></h2>
@@ -43,6 +44,7 @@ y   =   (2\mu^2\sin^3t)/(1+2\mu^2-3\mu\cos t),
 <img src="/images/catacaustic/can3.jpg"/></p>
 <h2 id="遗留其他"><a href="#遗留其他">遗留其他</a></h2>
 <p><a href="http://physics.stackexchange.com/questions/139504/why-the-caustic-of-a-circle-is-the-most-bright-curve-in-the-circle">SE question</a>：为何包络处最亮？</p>
+<p><a href="http://www.antoniosiber.org/bruno_pauns_caustic_en.html">这篇文章中有实际中反射多次的照片及其他应用</a></p>
 <p>Some other interesting articles: <a href="http://arxiv.org/pdf/1206.1312v1.pdf">From Pop-Up Cards to Coffee-Cup Caustics:The Knight’s Visor</a> <a href="http://arxiv.org/pdf/1406.1736.pdf">Using Rolling Circles to Generate Caustic Envelopes Resulting from Reflected Light</a></p>
 <div id="footer">
   &copy; 2013-2015 <a href="http://ieden.gitcafe.com">Eden Harder</a>

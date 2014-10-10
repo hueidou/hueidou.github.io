@@ -28,7 +28,7 @@ h2 a {
     text-decoration: none;
     color: #1abc9c; 
 }*/
-h1, h2, h3, h4, h5 { font-family: Helvetica, KaiTi, FZQiTi-S14S, cursive;
+h1, h2, h3, h4, h5 { font-family: Times New Roman, KaiTi, FZQiTi-S14S, cursive;
                      font-weight: normal;
                      border-bottom: 1px solid black; }
 /*h1, h3, h4, h5 { color: #f39c12; }

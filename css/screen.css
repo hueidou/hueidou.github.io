@@ -13,7 +13,7 @@ body {
 }
 
 body {
-  background-color: #f0f0f0;
+  background-color: #fffafa;
 }
 
 pre {
@@ -21,6 +21,8 @@ pre {
     background-color: #ebeff0;
     color: #34495e;
     padding: 0.5em;
+    white-space: pre-wrap;
+    word-wrap: break-word;
 }
 code {
     font-family: monospace;

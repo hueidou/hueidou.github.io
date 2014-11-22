@@ -5,6 +5,7 @@ body {
     max-width: 64em; 
     /**border-left: 1px solid black;
     border-right: 1px solid black;**/
+    background-color: #70e1ff;
     color: black;
     font-family: SimSun, FZLanTingHeiS-UL-GB, Helvetica, WenQuanYi Micro Hei, Verdana, Aril, sans-serif;
     font-size: 100%;

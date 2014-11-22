@@ -25,3 +25,23 @@ layout: default
         (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
     })();
 </script>
+
+<div id="cchess"></div>
+<script type="text/javascript">
+	var DhtmlXQ = 'dhtmlxq_'+parseInt(Math.random()*100000);
+	document.write('<div id="'+DhtmlXQ+'"></div>');
+	DhtmlXQ=document.getElementById(DhtmlXQ).parentNode;
+	DhtmlXQ='ad_thread4_'+DhtmlXQ.id.split('_')[2];
+	DhtmlXQ=document.getElementById(DhtmlXQ).parentNode;
+	DhtmlXQ=DhtmlXQ.innerHTML.match(/postmessage_\d+/gi);
+	if (DhtmlXQ!=null)
+	{
+		DhtmlXQ=document.getElementById(DhtmlXQ[0]);
+		if (typeof(DhtmlXQ)=='object')
+		{
+			if (DhtmlXQ.innerHTML.search(/\[DhtmlXQ\]([^\']{100,})\[\/DhtmlXQ\]/gi)!=-1)
+			DhtmlXQ.innerHTML=DhtmlXQ.innerHTML.replace(/\[DhtmlXQ\]/gi,'\x01').replace(/\[\/DhtmlXQ\]/gi,'\x02').replace(/\x01([^\x02]{100,})\x02/gi,'<iframe name=\'NoFile_[DhtmlXQiFrame]$1[/DhtmlXQiFrame]\' src="http://www.dpxq.com/DhtmlXQ_www_dpxq_com/DhtmlXQ_www_dpxq_com.htm" frameborder="0" scrolling="no" width="500" height="350" marginwidth="0" marginheight="0"></iframe>').replace(/\x01/gi,'[DhtmlXQ]').replace(/\x02/gi,'[/DhtmlXQ]');
+		}
+	}
+	document.write('<a href="http://www.dpxq.com/hldcg/search/readme.htm" target="_blank">广告：点此查看在最新的Discuz!7.0论坛上添加动态棋盘支持的办法</a>');
+</script>

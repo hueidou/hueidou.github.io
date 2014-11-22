@@ -18,7 +18,7 @@ body {
 
 pre {
     /**border: 1px dotted gray;**/
-    background-color: #d4d4d4;
+    background-color: #ebeff0;
     color: #34495e;
     padding: 0.5em;
 }
@@ -87,7 +87,7 @@ line-height: 1.45;
 position: relative;
 color: #483c32;
 border-left:2px solid #2B65EC;
-background:#cbf3fb;
+background:#88c9f2;
 }
 
 blockquote cite {

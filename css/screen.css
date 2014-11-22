@@ -18,9 +18,10 @@ body {
 
 pre {
     /**border: 1px dotted gray;**/
-    background-color: #eed205;
+    background-color: #fffafa;
     color: #34495e;
     padding: 0.5em;
+    border: 1px solid #bebab0;
     white-space: pre-wrap;
     word-wrap: break-word;
 }

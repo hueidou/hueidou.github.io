@@ -8,7 +8,7 @@ body {
     color: black;
     font-family: SimSun, FZLanTingHeiS-UL-GB, Helvetica, WenQuanYi Micro Hei, Verdana, Aril, sans-serif;
     font-size: 100%;
-    font-weight: 100;
+    font-weight: 200;
     line-height: 140%;
     color: #111; 
 }
@@ -92,7 +92,7 @@ line-height: 1.45;
 position: relative;
 color: #483c32;
 border-left:2px solid #2B65EC;
-background: rgba(136,201,242,0.4);
+background: rgba(30,153,230,0.5);
 }
 
 blockquote cite {

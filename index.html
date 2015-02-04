@@ -1,21 +1,23 @@
 ---
 layout: default
-title: San's world
 ---
 
-<div id="home">
-  <h1>Blog Posts</h1>
-  <ul class="posts">
+<div class="home">
+
+  <h1 class="page-heading">文章</h1>
+
+  <ul class="post-list">
     {% for post in site.posts %}
-      <li><span>{{ post.date | date_to_string }}</span> &raquo; <a href="{{ post.url }}">{{ post.title }}</a></li>
+      <li>
+        <span class="post-meta">{{ post.date | date: "%b %-d, %Y" }}</span>
+
+        <h2>
+          <a class="post-link" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
+        </h2>
+      </li>
     {% endfor %}
   </ul>
 
-  <h1>Open Source Projects</h1>
-  <ul class="posts">
-    <li><a href="http://github.com/hueidou/hi/">Hi:</a> 百度博客迁移, html, xml, markdown.</li>
-    <li><a href="http://github.com/hueidou/html2md/">Html2md:</a> Convert HTML to Markdown.</li>
-    <li><a href="http://github.com/hueidou/thelyrics/">Thelyrics:</a> 使用html或者html5实现的CD歌词本，制定标准形式.</li>
-    <li><a href="http://github.com/hueidou/fingertips/">Fingertips:</a> a forum for knowledge&create by talking.</li>
-  </ul>
+  <p class="rss-subscribe">订阅 <a href="{{ "/feed.xml" | prepend: site.baseurl }}">via RSS</a></p>
+
 </div>

@@ -3,7 +3,7 @@
 
 当我推送东西到这里时，[Jekyll](http://github.com/mojombo/jekyll)会将这个库自动转化为一个静态网站。
 
-我使用[Tom Preston-Werner](http://tom.preston-werner.com/)的博客作为模板，站点名称为[San's world](http://hueidou.github.io/)。
+我使用Jekyll的默认模板，站点名称为[San's world](http://hueidou.github.io/)。
 
 许可证
 ===

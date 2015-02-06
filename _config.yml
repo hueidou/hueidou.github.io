@@ -10,6 +10,6 @@ github_username:  hueidou
 disqus: hueidou
 
 # Build settings
-markdown: kramdown
+markdown: rdiscount
 
 permalink: /:year/:month/:day/:title.html

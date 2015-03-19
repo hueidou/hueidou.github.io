@@ -1,6 +1,6 @@
 ---
 layout: post
-title: 中国象棋课笔记
+title: 双随机矩阵
 categories: [Math]
 tags: [Life,Math]
 ---
@@ -43,7 +43,7 @@ m_{n2} &amp; \ldots &amp; m_{nn}
 b_2-b_1 &amp; \ldots &amp; b_n-b_1
 \end{pmatrix}
 \]</span></p>
-<p><a href="http://www.math.org.cn/forum.php?mod=viewthread&amp;tid=32344">另一个更明晰的方法是</a> 设<span class="math">\(a_1\geq a_2\geq\cdots\geq a_n\)</span>, <span class="math">\(b_1\geq b_2\geq\cdots\geq b_n\)</span>是两组固定的数. 矩阵<span class="math">\(D=(d_{ij})\)</span>满足: 每个元素非负，并且各行各列元素和为<span class="math">\(1\)</span>, 求以下泛函最大值： <span class="math">\[f(D):=\sum_{i,j=1}^nd_{ij}a_ib_j.\]</span> 用调整法: 如果存在<span class="math">\(i&lt;j,l&lt;k\)</span> 使得<span class="math">\(d_{ik}&gt;0,d_{jl}&gt;0\)</span>，则上述泛函<span class="math">\(f\)</span>一定有其它最大值点，因为可以取<span class="math">\(\varepsilon&gt;0\)</span>充分小，并用 <span class="math">\(d_{ik}-\varepsilon,d_{jl}-\varepsilon,d_{il}+\varepsilon, d_{jk}+\varepsilon\)</span>代替 <span class="math">\(d_{ik},d_{jl},d_{il},d_{jk}\)</span>后仍满足约束条件，此泛函的增量为： <span class="math">\[\varepsilon(a_j-a_i)(b_k-b_l)\geq0.\]</span> 由此可知，实施上述调整，使得第一行除了第一个元素为<span class="math">\(1\)</span>外其余为<span class="math">\(0\)</span>，泛函的值不减。此时第一列其余元素皆为<span class="math">\(0\)</span>，同理可作类似调整，推出当对角线元素全为<span class="math">\(1\)</span>时，泛函达到最大值： <span class="math">\[\sum_{j=1}^na_jb_j.\]</span></p>
+<p><a href="http://www.math.org.cn/forum.php?mod=viewthread&amp;tid=32344">另一个更明晰的方法是：</a> 设<span class="math">\(a_1\geq a_2\geq\cdots\geq a_n\)</span>, <span class="math">\(b_1\geq b_2\geq\cdots\geq b_n\)</span>是两组固定的数. 矩阵<span class="math">\(D=(d_{ij})\)</span>满足: 每个元素非负，并且各行各列元素和为<span class="math">\(1\)</span>, 求以下泛函最大值： <span class="math">\[f(D):=\sum_{i,j=1}^nd_{ij}a_ib_j.\]</span> 用调整法: 如果存在<span class="math">\(i&lt;j,l&lt;k\)</span> 使得<span class="math">\(d_{ik}&gt;0,d_{jl}&gt;0\)</span>，则上述泛函<span class="math">\(f\)</span>一定有其它最大值点，因为可以取<span class="math">\(\varepsilon&gt;0\)</span>充分小，并用 <span class="math">\(d_{ik}-\varepsilon,d_{jl}-\varepsilon\)</span>, <span class="math">\(d_{il}+\varepsilon, d_{jk}+\varepsilon\)</span>代替 <span class="math">\(d_{ik},d_{jl},d_{il},d_{jk}\)</span>后仍满足约束条件，此泛函的增量为： <span class="math">\[\varepsilon(a_j-a_i)(b_k-b_l)\geq0.\]</span> 由此可知，实施上述调整，使得第一行除了第一个元素为<span class="math">\(1\)</span>外其余为<span class="math">\(0\)</span>，泛函的值不减。此时第一列其余元素皆为<span class="math">\(0\)</span>，同理可作类似调整，推出当对角线元素全为<span class="math">\(1\)</span>时，泛函达到最大值： <span class="math">\[\sum_{j=1}^na_jb_j.\]</span></p>
 <p>看评论说我们这里的<span class="math">\(M\)</span>竟然是双随机矩阵，而</p>
 <blockquote>
 <p><a href="http://science.scileaf.com/library/732">双随机矩阵</a>是闭凸集，其上的线性泛函必在顶点处取得极值，而双随机矩阵的顶点就是置换矩阵。因此题目可去掉 ai,bj 的单调性，答案为置换矩阵。</p>

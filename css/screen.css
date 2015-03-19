@@ -121,6 +121,33 @@ img{
   max-width:62em; 
   width:expression(this.width>150?"150px":this.width); 
   height:expression(this.height>150?"  150px":this.height); 
+  display: block;
+  margin: 0 auto;
+}
+
+
+table {
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 24px;
+    border-spacing: 0;
+    border-bottom: 2px solid black;
+    border-top: 2px solid black;
+}
+table th {
+    padding: 3px 10px;
+    background-color: white;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    border-bottom: 1px solid black;
+}
+table td {
+    padding: 3px 10px;
+    border-top: none;
+    border-left: none;
+    border-bottom: none;
+    border-right: none;
 }
 /*****************************************************************************/
 /*

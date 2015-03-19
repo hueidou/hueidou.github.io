@@ -136,7 +136,7 @@ table {
 }
 table th {
     padding: 3px 10px;
-    background-color: white;
+    /*background-color: white;*/
     border-top: none;
     border-left: none;
     border-right: none;

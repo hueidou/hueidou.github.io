@@ -10,7 +10,6 @@ tags: [Odg, Physics]
 <div id="TOC">
 <ul>
 <li><a href="#geometrical-background">1: Geometrical background</a></li>
-<li><a href="#quantum-fields">2: Quantum Fields</a></li>
 </ul>
 </div>
 <blockquote>
@@ -59,8 +58,21 @@ tags: [Odg, Physics]
 [\delta F^{c\mu\nu}/(\delta A^c_\mu)] F^c_{\mu\nu} = [\partial_\mu(\delta A^c_\nu) F^{c\mu\nu}]/(\delta A^c_\mu) + [g f^{abc} A^a_\mu \delta A^b_\nu F^{c\mu\nu}]/(\delta A^c_\mu)\\
 = - [\partial_\mu F^{c\mu\nu} + g f^{abc} A^a_\mu F^{b\mu\nu}].
 \]</span> thus <span class="math">\(\delta(F^{c\mu\nu} F^c_{\mu\nu}) = 0\)</span> implies <span class="math">\([D_\mu, F^{\mu\nu}] = 0\)</span>.</li>
+<li>defect：缺陷不足；penetrable：可穿透的；可渗透的；codimension：余维数</li>
+<li>The tip of the cone, <span class="math">\(\rho = 0\)</span>, is a singular point because the length of a circle with the center at the tip and radius does not equal <span class="math">\(2\pi \rho\)</span>. <strong>WHY</strong>?</li>
+<li>(1.95): <span class="math">\(K_{ij}^+ = -\alpha e^{\alpha |x_5|}/2 = -K_{ij}^-\)</span>.</li>
+<li><span class="math">\(\int_{s^2_\beta}\sqrt{g} d^2x R = \int_0^\pi d\theta \int_0^\beta d\tau R \sin \theta + I_{sing} = 4\beta + I_{sing}\)</span> implies <span class="math">\(I_{sing} = 4(2\pi - \beta) = \int \sqrt{g} R_{sing} d^2x\)</span>, so <span class="math">\(R_{sing}(x) = 2(2\pi-\beta)/\sqrt{g} \sum_{x_s} \delta^{(2)}(x-x_s)\)</span>.</li>
+<li><a href="http://math.stackexchange.com/questions/209241/exterior-derivative-vs-covariant-derivative-vs-lie-derivative">各种导数</a>. <span class="math">\(R ( \vec{X}, \vec{Y}; \vec{Z}) = ( \nabla_{\vec{X}} \nabla_{\vec{Y}} - \nabla_{\vec{Y}} \nabla_{\vec{X}} - \nabla_{[ \vec{X}, \vec{Y} ]} ) \, \vec{Z}\)</span></li>
+<li>(1.7)中正负号颠倒, 可以用(1.6)验证正负号.</li>
+<li>习题1解答: <span class="math">\(0 = \delta(\delta^\mu_{\ \sigma}) = \delta(g^{\mu\nu}g_{\nu\sigma}) \Rightarrow \delta g^{\mu\nu} = -g^{\mu\rho}g^{\nu\sigma} (\delta g_{\rho\sigma})\)</span>. <span class="math">\[
+2 \delta \Gamma^\rho_{\mu\nu} =  \delta(g^{\rho\sigma} (\partial_\mu g_{\nu\sigma} + \partial_\nu g_{\mu\sigma} - \partial_\sigma g_{\mu\nu})) \\
+= \delta(g^{\rho\sigma}) (\partial_\mu g_{\nu\sigma} + \partial_\nu g_{\mu\sigma} - \partial_\sigma g_{\mu\nu}) + g^{\rho\sigma} (\partial_\mu \delta(g_{\nu\sigma}) + \partial_\nu \delta(g_{\mu\sigma}) - \partial_\sigma \delta(g_{\mu\nu})) \\
+= -2 g^{\rho\sigma} \Gamma^q_{\mu\nu} (\delta g_{pq}) + g^{\rho\sigma} (\partial_\mu \delta(g_{\nu\sigma}) + \partial_\nu \delta(g_{\mu\sigma}) - \partial_\sigma \delta(g_{\mu\nu})),
+\]</span> 利用(1.7), 而后利用(1.81)得 <span class="math">\[
+\mathcal{L}_\xi \Gamma^\rho_{\mu\nu} = \frac{1}{2} g^{\rho\sigma} ([\nabla_\nu, \nabla_\sigma] \xi_\mu + [\nabla_\mu, \nabla_\sigma] \xi_\nu + \{\nabla_\mu, \nabla_\nu\}\xi_\sigma).
+\]</span></li>
 </ol>
-<h1 id="quantum-fields"><a href="#quantum-fields">2: Quantum Fields</a></h1>
+<p>Reference https://www.physicsforums.com/threads/lie-vs-covariant-derivative.150200/$</p>
 <div class="footnotes">
 <hr />
 <ol>

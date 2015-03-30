@@ -45,13 +45,20 @@ tags: [Odg, Physics]
 <li>(partial) derivative, <a href="http://zh.wikipedia.org/wiki/%E5%85%B1%E5%8F%98%E5%AF%BC%E6%95%B0">covariant derivative</a>.</li>
 <li>类比微分的定义，发现需要用到平行移动。而球面上不考虑坐标系变化的平行移动：<img src="http://upload.wikimedia.org/wikipedia/commons/7/7d/Parallel_Transport.svg" /></li>
 <li>“it changes the sign if one reverses the orientation on <span class="math">\(\mathcal{M}\)</span>”, 应该是固定一个顺序Levi-Civita符号为1，其他按全反对称算。</li>
-<li><strong><a href="http://en.wikipedia.org/wiki/Einstein%E2%80%93Hilbert_action">The Einstein Theory</a></strong>中<span class="math">\(I_m\)</span>差一个积分，应改为相应的<span class="math">\(\mathcal{L}_m\)</span>. 注意<span class="math">\(-g\)</span>因<span class="math">\((-,+,+,+)\)</span>.</li>
+<li><strong><a href="http://en.wikipedia.org/wiki/Einstein%E2%80%93Hilbert_action#Derivation_of_Einstein.27s_field_equations">The Einstein Theory</a></strong>中<span class="math">\(I_m\)</span>差一个积分，应改为相应的<span class="math">\(\mathcal{L}_m\)</span>. 注意<span class="math">\(-g\)</span>因<span class="math">\((-,+,+,+)\)</span>.<br /></li>
+<li><span class="math">\(R_{\mu\nu;\rho} = 0\)</span> on Einstein manifold, 对(1.21)微分即得.</li>
+<li>(1.26). <span class="math">\[F^3_{\mu\nu\tau} = 1/3 (A_{\nu\tau;\mu} - A_{\mu\tau;\nu} + A_{\mu\nu;\tau}),\]</span> 利用(1.7)及<span class="math">\(A\)</span>的反对称展开即得<span class="math">\(\partial_{[\mu}A_{\nu\tau]}\)</span>.</li>
 <li>“i.e., <span class="math">\(d\tau\)</span> is proportional to the interval <span class="math">\(\sqrt{|ds^2|}\)</span>”:是指<span class="math">\(dx/d\tau\)</span>是该曲线（测地线）的单位切向量场。</li>
 <li><a href="http://en.wikipedia.org/wiki/Einstein%E2%80%93Hilbert_action">Wikipedia</a> <span class="math">\[
  T_{\mu\nu}:=  \frac{-2}{\sqrt{-g}}\frac{\delta (\sqrt{-g} \mathcal{L}_\mathrm{M})}{\delta g^{\mu\nu}} 
 = -2 \frac{\delta \mathcal{L}_\mathrm{M}}{\delta g^{\mu\nu}} + g_{\mu\nu} \mathcal{L}_\mathrm{M}.
 \]</span></li>
+<li>(1.35) null geodesics,令(1.35)中<span class="math">\(ds^2 = 0\)</span>: <span class="math">\(v,\theta,\varphi\)</span>均为常数, <span class="math">\(d^2r/d\tau^2 = 0\)</span>即是一解.</li>
+<li>Instanton: pseudoparticle, 瞬子. <strong>为什么换成欧氏度量仍有用?</strong></li>
 <li><a href="http://en.wikipedia.org/wiki/Complex_conjugate">c.c.</a> In some texts, the complex conjugate of a previous known number is abbreviated as “<span class="math">\(c.c.\)</span>”. For example, writing <span class="math">\(e^{i \phi}+c.c.\)</span> means <span class="math">\(e^{i \phi}+e^{-i \phi}\)</span>.</li>
+<li>(1.40)修改为: <span class="math">\(\omega_\mu \to -(\partial_\mu g)g^{-1} + g \omega_\mu g^{-1}\)</span>. 参见<a href="http://en.wikipedia.org/wiki/Gauge_theory#An_example:_Scalar_O.28n.29_gauge_theory">Wikipedia</a>.</li>
+<li>(1.43) <span class="math">\(e^\mu_a\)</span> 相当于活动标架, 即在每点赋予一个单位正交坐标系. (1.44): <span class="math">\((e^a_\mu e^\nu_a)e^b_\nu = e^a_\mu (e^\nu_a e^b_\nu) = e^a_\mu \delta^b_a = e^b_\mu = \delta^\nu_\mu e^b_\nu\)</span>.</li>
+<li>在推导(1.49)-(1.52)等时, 要利用公式(1.48)上面那句话: Namely, we put one <span class="math">\(\omega\)</span>-connection for each flat index and one Christoffel connection for each curved index. 如(1.48) <span class="math">\(0 = \nabla_\mu \delta^{ab} = \partial_\mu \delta^{ab} + \omega^a_{\mu c} \delta^{cb} + \omega^b_{\mu c} \delta^{ac} = \omega^{ab}_\mu + \omega^{ba}_\mu\)</span>.</li>
 <li>Local <span class="math">\(U(1)\)</span> gauge transformations <span class="math">\(\varphi&#39;(x) = e^{ie\lambda(x)}\varphi(x)\)</span>, <span class="math">\(A&#39;_\mu(x) = A_\mu(x) - \partial_\mu \lambda(x)\)</span>.</li>
 <li>Refer to Mark Srednicki’s <QFT> Chapter 69 p416. Firstly compute <span class="math">\([D_\mu, F^{\mu\nu}]\)</span> <span class="math">\[
 [D_\mu,F^{\mu\nu}] = D_\mu F^{\mu\nu} - F^{\mu\nu} D_\mu = (\partial_\mu - ig A^a_\mu T^a)(F^{c\mu\nu} T^c) - (F^{c\mu\nu} T^c)(\partial_\mu - ig A^a_\mu T^a)\\

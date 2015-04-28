@@ -1,0 +1,107 @@
+---
+layout: post
+title: Tex中数学字体
+categories: [Tex]
+tags: [Tex, Font]
+---
+
+<h1>{{ page.title }}</h1>
+
+<div id="TOC">
+<ul>
+<li><a href="#常见字体">常见字体</a></li>
+<li><a href="#更多字体">更多字体</a></li>
+<li><a href="#安装-mtp2">安装 MTP2</a></li>
+<li><a href="#参考文献">参考文献</a></li>
+</ul>
+</div>
+<p>用XeTeX排版文字字体可以采用系统中已有字体, 另外也可以用<code>usefont</code>命令去用已有的<a href="http://www.tug.dk/FontCatalogue/">LaTeXFont</a>:</p>
+<pre><code>\documentclass{article}
+\input Zallman.fd
+\begin{document}
+\def\alf{A B C D E F G H I J K L M N O P Q R S T U V W X Y Z}
+\noindent{\usefont{U}{Zallman}{xl}{n}\alf}
+{\usefont{U}{mt2ms}{m}{it}\alf}
+\font\calo=zxxrow7z at 11pt
+{\calo \alf}
+\end{document} </code></pre>
+<div class="figure">
+<img src="http://i2.tietuku.com/b46cc2a6a296e680.png" />
+</div>
+<p>那么数学字体呢?</p>
+<h1 id="常见字体"><a href="#常见字体">常见字体</a></h1>
+<p>一般有如下几种:</p>
+<div class="figure">
+<img src="http://i1.tietuku.com/9d441800a14bb3fa.png" />
+</div>
+<p>其中MathJax支持的有:</p>
+<table>
+<thead>
+<tr class="header">
+<th align="right">代码</th>
+<th align="left">样式</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="right"><code>\mathrm{EDEN}</code></td>
+<td align="left"><span class="math">\(\mathrm{EDEN}\)</span></td>
+</tr>
+<tr class="even">
+<td align="right"><code>\mathit{EDEN}</code></td>
+<td align="left"><span class="math">\(\mathit{EDEN}\)</span></td>
+</tr>
+<tr class="odd">
+<td align="right"><code>\mathcal{EDEN}</code></td>
+<td align="left"><span class="math">\(\mathcal{EDEN}\)</span></td>
+</tr>
+<tr class="even">
+<td align="right"><code>\mathscr{EDEN}</code></td>
+<td align="left"><span class="math">\(\mathscr{EDEN}\)</span></td>
+</tr>
+<tr class="odd">
+<td align="right"><code>\mathbb{EDEN}</code></td>
+<td align="left"><span class="math">\(\mathbb{EDEN}\)</span></td>
+</tr>
+<tr class="even">
+<td align="right"><code>\mathfrak{EDEN}</code></td>
+<td align="left"><span class="math">\(\mathfrak{EDEN}\)</span></td>
+</tr>
+</tbody>
+</table>
+<h1 id="更多字体"><a href="#更多字体">更多字体</a></h1>
+<p>如果使用<a href="http://www.ctan.org/tex-archive/macros/latex/contrib/mathalfa">mathalfa</a>宏包将可以方便地将很多字体用在数学公式中, 但其中有些字体是需要额外安装的.</p>
+<div class="figure">
+<img src="http://i1.tietuku.com/2e4b31e154f03413.png" />
+</div>
+<h1 id="安装-mtp2"><a href="#安装-mtp2">安装 MTP2</a></h1>
+<p>以安装 MathTime Professional 2 数学字体为例, 商业字体要注意版权问题.</p>
+<p>系统: Ubuntu 14.04, Texlive2014, $TEXMFLOCAL: <code>~/.texmf</code>, updmap.cfg位置: <code>/usr/local/texlive/2014/texmf-dist/web2c</code>.</p>
+<ol style="list-style-type: decimal">
+<li><a href="http://www.latexstudio.net/wp-content/uploads/2013/02/MathTimePro2-fonts.zip">下载字体</a>;</li>
+<li>解压后将texmf文件夹中所有文件复制到$TEXMFLOCAL;</li>
+<li><p>在updmap.cfg末尾添加:</p>
+<pre><code># Map Math Time Professional 2 Fonts
+Map mtpro2.map</code></pre></li>
+<li><p>最后更新系统文件:</p>
+<pre><code>sudo texhash
+sudo updmap-sys</code></pre></li>
+<li><p>测试以下代码是否正常运行:</p>
+<pre><code>\documentclass{article}
+\usepackage[cal=mt]{mathalfa}
+\begin{document}
+$\{\mathcal{T}_\alpha\}_{\alpha \in A}$
+\LaTeX
+\end{document}</code></pre></li>
+</ol>
+<h1 id="参考文献"><a href="#参考文献">参考文献</a></h1>
+<ol style="list-style-type: decimal">
+<li><a href="http://tex.stackexchange.com/questions/58098/what-are-all-the-font-styles-i-can-use-in-math-mode">What are all the font styles I can use in math mode?</a></li>
+<li><a href="http://www.ctan.org/tex-archive/macros/latex/contrib/mathalfa">mathalfa</a>.</li>
+<li><a href="http://bbs.sjtu.edu.cn/bbscon,board,TeX_LaTeX,file,M.1246290498.A.html">安装 MathTime Professional 2 数学字体</a>.</li>
+<li><a href="http://www.tug.dk/FontCatalogue/">LaTeXFont</a>.</li>
+<li><a href="http://latex-project.org/guides/fntguide.pdf">LaTeX 2ε font selection</a>.</li>
+</ol>
+<div id="footer">
+  &copy; 2013-2015 <a href="http://ieden.gitcafe.com">Eden Harder</a>
+</div>

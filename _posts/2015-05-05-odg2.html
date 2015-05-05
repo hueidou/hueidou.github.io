@@ -1,0 +1,69 @@
+---
+layout: post
+title: Quantum Fields
+categories: [Physics]
+tags: [Odg, Physics]
+---
+
+<h1>{{ page.title }}</h1>
+
+<div id="TOC">
+<ul>
+<li><a href="#relativistic-inner-product">Relativistic Inner Product</a></li>
+<li><a href="#quantization-and-single-particle-excitations">Quantization and Single-Particle Excitations</a></li>
+<li><a href="#comments-on-gauge-fields">Comments on Gauge Fields</a></li>
+</ul>
+</div>
+<blockquote>
+<p>Anyone who has never made a mistake has never tried anything new. <cite>Albert Einstein</cite></p>
+</blockquote>
+<h2 id="relativistic-inner-product"><a href="#relativistic-inner-product">Relativistic Inner Product</a></h2>
+<ol start="0" style="list-style-type: decimal">
+<li>目的是通过守恒流定义相对论内积.</li>
+<li>在相应的模型中知道哪些是external classical background?</li>
+<li><a href="http://en.wikipedia.org/wiki/Foliation">foliation</a>, 直观解释是大的流形局域能分解为小的流形的直积.</li>
+<li>“As we saw (see Sect. 1.6)”是指(1.78)-(1.79)吗? 1.6节中哪些已经是线性化的方程呢?</li>
+<li>如<span class="math">\((\psi\psi^\star)^2\)</span>变成了两个场之后怎么做? 前面只是关于一个场的. 还是说要将两个场直和起来?</li>
+<li>Sesquilinear: 半双线性, linear quasilinear bilinear…</li>
+<li>self-adjoint或是为了保证<span class="math">\(f_1, f_2\)</span>的对称性.</li>
+<li>是否只有全局连续对称性才能推出守恒流? 因为要流啊, 离散的那是跳.</li>
+<li>(2.5), 按假设<span class="math">\(P\)</span>通过分部积分总能化成 <span class="math">\[
+\partial_\mu f_1^\star (\alpha^{\mu\nu} \partial_\nu f_2 + \beta^\mu f_2)
+\]</span> 直接计算可知.</li>
+<li>对称性: 1. 真不变, 对应恒等式和守恒律; 2. 要求不变, 对应动力学方程, 等价于最小作用两原理. <span class="math">\(\delta I = 0\)</span>: 1. <span class="math">\(\delta_\alpha I \equiv 0\)</span> 对一些<span class="math">\(\alpha\)</span>, 恒等式; 2. <span class="math">\(\delta_\alpha I \equiv 0\)</span> 对所有<span class="math">\(\alpha\)</span>, 最小作用量原理. 在量子力学中一般要求<span class="math">\(\delta\langle \hat{S} \rangle = \delta\left( \langle \int d \psi^\dagger \hat{S} \psi\rangle\right) =0\)</span>, 若非得要求 <span class="math">\(\delta \hat{S} = 0\)</span>, 则约束成了方程.</li>
+<li>(2.7)-(2.8), 注意<span class="math">\(f_{2,\mu} = \partial_\mu f_2\)</span>.</li>
+<li>(2.9), 当<span class="math">\(\nabla_\mu j^\mu = 0\)</span>时相当于守恒荷.</li>
+<li>(2.9)下方一段最后一句话或可从微分形式和积分区域的对偶理解.</li>
+<li>例子中一般用1.6节里的拉氏量结合(2.7)-(2.8)计算.</li>
+<li>实的和复的要差一个<span class="math">\(1/2\)</span>.</li>
+<li>(2.14)所用(1.75)中作用量的系数<span class="math">\(-1/4\)</span>或应在此修改为<span class="math">\(-1/2\)</span>.</li>
+<li>(2.16)只是类比推知.</li>
+</ol>
+<h2 id="quantization-and-single-particle-excitations"><a href="#quantization-and-single-particle-excitations">Quantization and Single-Particle Excitations</a></h2>
+<ol start="0" style="list-style-type: decimal">
+<li>目的是给出量子化条件.</li>
+<li><span class="math">\(\psi[f] = \langle f,\psi\rangle\)</span>中<span class="math">\(f,\psi\)</span>均是classical solution.</li>
+<li>注意 complex conjugate <span class="math">\(\psi^+[f] = \langle \psi,f\rangle = (\psi[f])^\star \neq \psi^\star[f]\)</span>. 利用(2.16)推实的条件: <span class="math">\[
+\langle \psi,f\rangle = \langle \psi^\star,f\rangle = \pm \langle f^\star,\psi\rangle \Leftrightarrow \psi^+[f] = \pm \psi[f^\star]. 
+\]</span></li>
+<li>既然<span class="math">\(\psi[f]\)</span>等都是数, 怎么理解对易反对易?</li>
+<li>下面用同样的记号, 但<span class="math">\(\psi[f]\)</span>是算子. “It’s also required that operators preserve <strong>symmetry properties</strong> of the classical functionals”, 是指哪些对称性?</li>
+<li>(2.18)中<span class="math">\(\hbar \to 0\)</span>, 量子退化成经典. (2.18) is fully covariant, 是从相对论内积的性质继承的?</li>
+<li>Next: 1. elementary field excitations; 2. decouple oscillations.</li>
+<li>通过类似Schmidt正交化得到满足(2.19)-(2.21)的一组<span class="math">\(\{f_A\}\)</span>. (2.20)的正负号是咋推出的?</li>
+<li>通过(2.22), (2.23)可推出(2.24). 局部地, 也可将<span class="math">\(\psi\)</span>表示成(2.25), 此时可有<span class="math">\(\psi[f] = \langle f,\psi\rangle\)</span>. (2.26)直接计算.</li>
+<li>因<span class="math">\(a_i,b_j\)</span>和<span class="math">\(\{f_A\}\)</span>有关, 故由(2.27)解出的ground state<span class="math">\(|0\rangle\)</span>也与之相关.</li>
+<li>不同组的生成湮灭算子之间由Bogoliubov变换衔接.</li>
+</ol>
+<h2 id="comments-on-gauge-fields"><a href="#comments-on-gauge-fields">Comments on Gauge Fields</a></h2>
+<ol start="0" style="list-style-type: decimal">
+<li>考虑相对论内积有退化情形.</li>
+<li>Physical modes是模不为<span class="math">\(0\)</span>的解, 而若<span class="math">\(\langle f,\xi\rangle \equiv 0, \forall f\)</span>, 则称<span class="math">\(\xi\)</span>是gauge mode. <span class="math">\(f \to f+\xi\)</span>不影响相对论内积.</li>
+<li>等价类, 给出规范条件选取代表元 (可能做不到全局).</li>
+<li><span class="math">\(\nabla^2 \lambda = \nabla^\mu (A_\mu + \xi_\mu) - \nabla^\mu A_\mu\)</span>.</li>
+<li>两个条件或物理自由度是指<span class="math">\(\partial^\mu A_\mu = 0, A_0 = 0\)</span>.</li>
+<li>倒数第二段是对2.2节很好的总结.</li>
+</ol>
+<div id="footer">
+  &copy; 2013-2015 <a href="http://ieden.gitcafe.com">Eden Harder</a>
+</div>

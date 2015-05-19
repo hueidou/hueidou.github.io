@@ -9,15 +9,20 @@ tags: [Odg, Physics]
 
 <div id="TOC">
 <ul>
-<li><a href="#relativistic-inner-product">Relativistic Inner Product</a></li>
-<li><a href="#quantization-and-single-particle-excitations">Quantization and Single-Particle Excitations</a></li>
-<li><a href="#comments-on-gauge-fields">Comments on Gauge Fields</a></li>
+<li><a href="#relativistic-inner-product">1. Relativistic Inner Product</a></li>
+<li><a href="#quantization-and-single-particle-excitations">2. Quantization and Single-Particle Excitations</a></li>
+<li><a href="#comments-on-gauge-fields">3. Comments on Gauge Fields</a></li>
+<li><a href="#canonical-quantization">4. Canonical quantization</a></li>
+<li><a href="#quantum-theory-on-stationary-backgrounds">5. Quantum theory on stationary backgrounds</a></li>
+<li><a href="#greens-functions">6. Green’s functions</a></li>
+<li><a href="#computation-of-averages">7. Computation of averages</a></li>
+<li><a href="#quasinormal-modes">8. Quasinormal modes</a></li>
 </ul>
 </div>
 <blockquote>
 <p>Anyone who has never made a mistake has never tried anything new. <cite>Albert Einstein</cite></p>
 </blockquote>
-<h2 id="relativistic-inner-product"><a href="#relativistic-inner-product">Relativistic Inner Product</a></h2>
+<h2 id="relativistic-inner-product"><a href="#relativistic-inner-product">1. Relativistic Inner Product</a></h2>
 <ol start="0" style="list-style-type: decimal">
 <li>目的是通过守恒流定义相对论内积.</li>
 <li>在相应的模型中知道哪些是external classical background?</li>
@@ -39,7 +44,7 @@ tags: [Odg, Physics]
 <li>(2.14)所用(1.75)中作用量的系数<span class="math">\(-1/4\)</span>或应在此修改为<span class="math">\(-1/2\)</span>.</li>
 <li>(2.16)只是类比推知.</li>
 </ol>
-<h2 id="quantization-and-single-particle-excitations"><a href="#quantization-and-single-particle-excitations">Quantization and Single-Particle Excitations</a></h2>
+<h2 id="quantization-and-single-particle-excitations"><a href="#quantization-and-single-particle-excitations">2. Quantization and Single-Particle Excitations</a></h2>
 <ol start="0" style="list-style-type: decimal">
 <li>目的是给出量子化条件.</li>
 <li><span class="math">\(\psi[f] = \langle f,\psi\rangle\)</span>中<span class="math">\(f,\psi\)</span>均是classical solution.</li>
@@ -54,8 +59,12 @@ tags: [Odg, Physics]
 <li>通过(2.22), (2.23)可推出(2.24). 局部地, 也可将<span class="math">\(\psi\)</span>表示成(2.25), 此时可有<span class="math">\(\psi[f] = \langle f,\psi\rangle\)</span>. (2.26)直接计算.</li>
 <li>因<span class="math">\(a_i,b_j\)</span>和<span class="math">\(\{f_A\}\)</span>有关, 故由(2.27)解出的ground state<span class="math">\(|0\rangle\)</span>也与之相关.</li>
 <li>不同组的生成湮灭算子之间由Bogoliubov变换衔接.</li>
+<li>描述经典的Feimi子场的时候也需要用到反对易的Grassmann数, 在整个理论中也是处于数的地位.</li>
+<li>退耦合与简正坐标. 例子见Arnold经典力学p106, 谐振子是二次型总可以对角化. <span class="math">\(\beta_1 = \theta_1 + \theta_2, \beta_2 = \theta_1 - \theta_2\)</span>即是简正坐标, 因两个参数之间没有耦合项了. <img src="http://i2.tietuku.com/e3ee39284055c1e6.png" /> 再者, 当弹簧系数无穷大时情况如下 <img src="http://i2.tietuku.com/33ce2e1000fcfb2b.png" /></li>
+<li>黑洞附近场量子化只能locally做. 黑洞是球对称的, 推出相应的场也应是球对称的.</li>
+<li><span class="math">\(A_0 = 0\)</span> and <span class="math">\(\nabla \vec{A} = 0\)</span> (罗轮子规范) 推出 <span class="math">\(\vec{k}\cdot \vec{A} = 0\)</span> (库伦规范).</li>
 </ol>
-<h2 id="comments-on-gauge-fields"><a href="#comments-on-gauge-fields">Comments on Gauge Fields</a></h2>
+<h2 id="comments-on-gauge-fields"><a href="#comments-on-gauge-fields">3. Comments on Gauge Fields</a></h2>
 <ol start="0" style="list-style-type: decimal">
 <li>考虑相对论内积有退化情形.</li>
 <li>Physical modes是模不为<span class="math">\(0\)</span>的解, 而若<span class="math">\(\langle f,\xi\rangle \equiv 0, \forall f\)</span>, 则称<span class="math">\(\xi\)</span>是gauge mode. <span class="math">\(f \to f+\xi\)</span>不影响相对论内积.</li>
@@ -63,6 +72,47 @@ tags: [Odg, Physics]
 <li><span class="math">\(\nabla^2 \lambda = \nabla^\mu (A_\mu + \xi_\mu) - \nabla^\mu A_\mu\)</span>.</li>
 <li>两个条件或物理自由度是指<span class="math">\(\partial^\mu A_\mu = 0, A_0 = 0\)</span>.</li>
 <li>倒数第二段是对2.2节很好的总结.</li>
+</ol>
+<h2 id="canonical-quantization"><a href="#canonical-quantization">4. Canonical quantization</a></h2>
+<ol start="0" style="list-style-type: decimal">
+<li>想要说明书中所用量子化方法是能退化成一般的正则量子化方法的.</li>
+<li>2.25: <span class="math">\(\psi(x) = \sum a_i f^{(+)}_i(x) + \sum b^+_j f^{(-)}_j(x)\)</span>将会很有用.</li>
+<li><span class="math">\(f_1 = \dot{f}_2 = 0\)</span>是在等时面上.</li>
+<li>在一般的度量空间就不一定像闵氏空间那样容易构造<span class="math">\(f_i^{(\pm)}\)</span>. 且闵氏空间这里构造的<span class="math">\(f_i^{(\pm)}\)</span>共轭.</li>
+<li>弯曲空间相当于有加速度, 惯性系不好定义.</li>
+</ol>
+<h2 id="quantum-theory-on-stationary-backgrounds"><a href="#quantum-theory-on-stationary-backgrounds">5. Quantum theory on stationary backgrounds</a></h2>
+<ol start="0" style="list-style-type: decimal">
+<li>要讨论哈密顿量和能量.</li>
+<li>在理想情况下, 如stationary时, 哈密顿量才和能量一致.</li>
+<li>(2.43) 关于<span class="math">\(t\)</span>和<span class="math">\(x\)</span>的导数个数整体是2.</li>
+<li>(2.46)怎么做的展开? <span class="math">\(a^+_ia_i[f_k]\)</span>怎么算?</li>
+<li><span class="math">\(H|0\rangle = E_0 |0\rangle\)</span>, 一般<span class="math">\(|0\rangle\)</span>在一般的空间中不协变, 故不能统一去掉<span class="math">\(E_0\)</span>. 如喀什米尔效应中两个板之间距离会尺缩, 且洛伦兹变换总变不没平行板.</li>
+</ol>
+<h2 id="greens-functions"><a href="#greens-functions">6. Green’s functions</a></h2>
+<ol start="0" style="list-style-type: decimal">
+<li>介绍各种格林函数.</li>
+<li>都是可以用(2.56)-(2.57)两个Wightman函数表示.</li>
+<li>理解(2.65)-(2.66)中的正负号和产生湮灭算子的顺序有关.</li>
+<li>(2.58)中的<span class="math">\(G\)</span>是否取了真空期待值呢?</li>
+<li>为什么会有不同类型的奇点?</li>
+</ol>
+<h2 id="computation-of-averages"><a href="#computation-of-averages">7. Computation of averages</a></h2>
+<ol start="0" style="list-style-type: decimal">
+<li>算真空期待值.</li>
+<li>(2.74)下面一段: 虽然有奇点, 但可以用重整化的方法去掉. 一般都是用格林函数表示, 然后重整化去掉奇点.</li>
+<li>不同的<span class="math">\(D_{AB}(x,x^\prime)\)</span>可能给出相同的<span class="math">\(\mathcal{O}(x)\)</span>.</li>
+</ol>
+<h2 id="quasinormal-modes"><a href="#quasinormal-modes">8. Quasinormal modes</a></h2>
+<ol start="0" style="list-style-type: decimal">
+<li>使得和其他解配合的朗斯基为<span class="math">\(0\)</span>的解成为Quasinormal mode.</li>
+<li>(2.78)是关于<span class="math">\(t\)</span>的变换.</li>
+<li>(2.80)将<span class="math">\(\chi\)</span>用<span class="math">\(\psi\)</span>表示, 要用到分部积分, <span class="math">\(e^{-\lambda t}\)</span>会处理无穷远的. (2.82)就在说分部积分.</li>
+<li>由(2.84)知(2.83)表示的<span class="math">\(\chi\)</span>是(2.80)的一个解.</li>
+<li>(2.90)下面一段: 因半圆是从左侧绕的, 故需考虑<span class="math">\(\mathfrak{R} \lambda_k &lt; 0\)</span>的奇点.</li>
+<li>(2.91)是因为<span class="math">\(t\)</span>足够大时是<span class="math">\(\lambda_0\)</span>起主要作用.</li>
+<li>朗斯基行列式是描述解之间的独立性的, 那样的<span class="math">\(\bar{f}\)</span>和<span class="math">\(f_1,f_2\)</span>一起算的朗斯基均会为<span class="math">\(0\)</span>.</li>
+<li>倒数第二段物理理解.</li>
 </ol>
 <div id="footer">
   &copy; 2013-2015 <a href="http://ieden.gitcafe.com">Eden Harder</a>

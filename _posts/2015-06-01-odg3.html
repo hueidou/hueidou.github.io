@@ -10,6 +10,9 @@ tags: [Odg, Physics]
 <div id="TOC">
 <ul>
 <li><a href="#differential-operators-on-manifolds">3.1 Differential operators on manifolds</a></li>
+<li><a href="#boundary-conditions">3.2 Boundary conditions</a></li>
+<li><a href="#bounded-and-compact-operators">3.3 Bounded and compact operators</a></li>
+<li><a href="#lorentzian-signature">3.4 Lorentzian signature</a></li>
 </ul>
 </div>
 <blockquote>
@@ -20,20 +23,49 @@ tags: [Odg, Physics]
 <li>本节将拉普拉斯算子进行两方面推广, 一是推广到一般丛, 而是微分算子推广为伪微分算子.</li>
 <li>“We are not going…”: 授之以鱼, 不如授之以渔.</li>
 <li>“digressions”: 题外话, 会在第四节讲.</li>
-<li><span class="math">\(a^\mu(x), b(x)\)</span>为什么是matrix valued functions? 是因为直乘了fibre space吗?</li>
-<li>(3.2)和(3.1)的等价不妨在平直空间验证.</li>
+<li><span class="math">\(a^\mu(x), b(x)\)</span>为什么是matrix valued functions? 是因为直乘了fibre space吗? 答: 矩阵型如在规范场中, 杨振宁的工作即将<span class="math">\(e^{i\theta \psi}\)</span>中<span class="math">\(\theta\)</span>从数推广到矩阵.</li>
+<li>“non-minimal”是指<span class="math">\(g^{\mu\nu}\partial_\mu \partial_\nu + (1-\frac{1}{\kappa}) \partial^\nu \partial_\nu + \cdots\)</span>, 即有多出的结构. (3.2)中第一项类似看成动能项, 第二项类似看成势能项. (3.2)和(3.1)的等价不妨在平直空间验证. (3.2)的好处是<span class="math">\(E\)</span>对算子而言是“常数”.</li>
 <li>Christoffel符号和背景场<span class="math">\(\omega\)</span>无关.</li>
 <li>如同第一章将流形(切空间)上微分推广到一般丛上.</li>
-<li>(3.4)=<span class="math">\(-[g^{\mu\nu}\partial_\mu\partial_\nu + (\frac{\partial_\mu g}{2g}g^{\mu\nu} + \partial_\mu g^{\mu\nu})\partial_\nu]\varphi\)</span>, 这里只有<span class="math">\(E=0\)</span>, 而背景场<span class="math">\(\omega\)</span>还是存在的.</li>
+<li>(3.4)=<span class="math">\(-[g^{\mu\nu}\partial_\mu\partial_\nu + (\frac{\partial_\mu g}{2g}g^{\mu\nu} + \partial_\mu g^{\mu\nu})\partial_\nu]\varphi\)</span>, 这里<span class="math">\(E=0\)</span>, <span class="math">\(\omega = 0\)</span>, 是最简单的贝克拉姆算子.</li>
 <li>“with an arbitrary zero order”是指什么order? 导数的阶数?</li>
-<li>(1.74): <span class="math">\(D_\mu = \nabla_\mu + ieA_\mu\)</span>, <span class="math">\(\nabla_\mu = \partial_\mu + \omega^{[s]}_\mu\)</span>. 在(3.8)中难道将<span class="math">\(A_\mu\)</span>取为0? 另, (3.8)中<span class="math">\((i\gamma^\mu \nabla_\mu)^2\)</span>中的平方是否和度规<span class="math">\(g\)</span>有关?</li>
+<li>(1.74): <span class="math">\(D_\mu = \nabla_\mu + ieA_\mu\)</span>, <span class="math">\(\nabla_\mu = \partial_\mu + \omega^{[s]}_\mu\)</span>. 在(3.8)中难道将<span class="math">\(A_\mu\)</span>取为0? 另, (3.8)中<span class="math">\((i\gamma^\mu \nabla_\mu)^2\)</span>中的平方和度规<span class="math">\(g\)</span>有关. <span class="math">\({\not}D^2 = \partial^2\)</span>.</li>
 <li>“by summing up the Fourier series”: 因FT相当于展成平面波.</li>
 <li>(3.11)是类比微分对应的FT而定义的更一般的算子. 注意是<span class="math">\(\partial_\mu\)</span>对应<span class="math">\(k_\mu\)</span>而非其他协变导数.</li>
 <li>“For <span class="math">\(P=L\)</span>…”: 因为最高二次, 且系数中和丛无关.</li>
 <li>内积应是sesquilinear还是bilinear? (3.13)是从一点到全空间.</li>
-<li>“We shall mostly ignore…”: 嘛意思? 在合适区域上对称自动自伴, 无需额外要求.</li>
-<li>“anti-Hermitian matrix”: 如在平直空间则对应一次导数项, 为中和掉分部积分的负号, 故要求反厄米?</li>
-<li>(1.97): <span class="math">\(ds^2 = d\theta^2+\sin^2\theta d\tau^2\)</span>, (3.15)中指标应是直角坐标系的, 转化到球坐标系为(3.19).</li>
+<li>“We shall mostly ignore…”: 嘛意思? 在合适区域上对称自动自伴, 无需额外要求. 这一部分相当于在区分自伴和厄米.</li>
+<li>“anti-Hermitian matrix”: 如在平直空间则对应一次导数项, 为中和掉分部积分的负号, 故要求反厄米? 答: 相当于若<span class="math">\(U = e^{iH}\)</span>厄米, 则要求<span class="math">\(H\)</span>幺正或者反幺正(差一个<span class="math">\(i\)</span>).</li>
+<li>(1.97): <span class="math">\(ds^2 = d\theta^2+\sin^2\theta d\tau^2\)</span>, (3.15)中指标应是直角坐标系的, 转化到球坐标系为(3.19). <span class="math">\(Y_{l,m}\)</span>就是球谐函数. <span class="math">\(L_z = xp_y - yp_x, \cdots\)</span>, <span class="math">\(L^2 = l_x^2 + L_y^2 + L_z^2\)</span>用球坐标写出即(3.19), <span class="math">\(L^2\)</span>和<span class="math">\(L_i, i = x,y,z\)</span>都对易.</li>
+<li>大动量对应短波高频. 有限个负本征值说明有下界, 对应能量有下界.</li>
+</ol>
+<h2 id="boundary-conditions"><a href="#boundary-conditions">3.2 Boundary conditions</a></h2>
+<ol start="0" style="list-style-type: decimal">
+<li>本节大致介绍了: Dirichlet, Robin, Mixed, Oblique边界条件.</li>
+<li>对于一个<span class="math">\(q\)</span>阶算子, 在部分边界上需要<span class="math">\(q\)</span>个边界条件, 在整体边界上只需要<span class="math">\(q/2\)</span>个边界条件. 而对于自旋情形, 因为是一阶微分算子, 对个数会进一步减少. “one half”是指一半, 而非“one and a half”, 从(3.47)可以看出.</li>
+<li>(3.25), (3.26)每个边界处一个条件, 也可以只在初始界面处给定混合的边界条件.</li>
+<li>(3.29)验证了3.1节中合适的边界条件使<span class="math">\(L\)</span>自伴.</li>
+<li>“see (3.17)”: 对应周期性边界条件.</li>
+<li>(3.30)从直角坐标系到极坐标系.</li>
+<li>(3.34): 给定一个<span class="math">\(k\)</span>能确定一个<span class="math">\(\lambda\)</span>, 而这里需要解一个超越方程. (3.35)中给出的是渐近行为, 求解零点为<span class="math">\(\lambda = \frac{\alpha^2 \pi^2}{\rho_0^2}\)</span>, 和(3.17)中类似.</li>
+<li>(3.37)中<span class="math">\(x\)</span>的上标是index而非power.</li>
+<li>(3.41): 因当<span class="math">\(|\bar{k_1}|\)</span>较大时, <span class="math">\(\tanh(\bar{k_1}) \sim sign(\bar{k_1})\)</span>, <span class="math">\(-k_1^2 + k_2^2 \sim k_2^2(1-\alpha^2)\)</span>. 故当<span class="math">\(|\bar{k_1}|\)</span>较大时都会对应一个负的mode, 而和之前说的好的边界条件的情况恰成对应.</li>
+<li>Oblique即<span class="math">\(\nabla_i\)</span>之间有叠加, 非完全分离. 从基底角度考虑即是非正交, 有倾斜.</li>
+<li>“Weyl formula (5.39)”是关于谱密度的一个公式, <span class="math">\(N(\lambda) \sim \lambda^{n/2}V_n\)</span>, <span class="math">\(V_n\)</span>是空间体积.</li>
+</ol>
+<h2 id="bounded-and-compact-operators"><a href="#bounded-and-compact-operators">3.3 Bounded and compact operators</a></h2>
+<ol start="0" style="list-style-type: decimal">
+<li>介绍有界算子和紧算子, 二者关系及相关性质. 泛函分析中度量空间部分会有帮助.</li>
+<li>怎么理解“the boundedness of the set of the eigenvalues”?</li>
+<li>(3.53)中<span class="math">\(L\)</span>是(3.24)中的拉普拉斯算子, <span class="math">\(l\)</span>是区间长度, 起到了“归一化”作用. 算子的谱为<span class="math">\([(k\pi)^2+1]^{-1}\)</span>.</li>
+<li>对于度量空间而言, 紧的都是有界的, 对于有限维度量空间而言紧等价于有界闭. 对于无穷维空间区分两者的一个重要例子就是基底的例子. squashing: 挤进, 压扁, 平定叛乱.</li>
+<li>“Q defined above in Eq. (3.53) is compact”: 在基底上展开逐个去考虑, 再在每个维数上逐步挑选收敛子列. 什么是“norm limits”?</li>
+<li><span class="math">\(\mathcal{L}^p\)</span>因这里已定义有算子范数, 此时应该有收敛定义的空间和可积定义的空间是一致的. <span class="math">\(\mathcal{L}^1\)</span>为何称为“the trace class”.</li>
+<li>triple: 三元组, 三倍的, 三方的. auxiliary: 辅助的.</li>
+</ol>
+<h2 id="lorentzian-signature"><a href="#lorentzian-signature">3.4 Lorentzian signature</a></h2>
+<ol start="0" style="list-style-type: decimal">
+<li>换到洛伦兹流形上讨论. 双曲算子代替了椭圆算子, 而Dirac算子情形稍复杂些, 第二段及以后都是在作此讨论.</li>
 </ol>
 <div id="footer">
   &copy; 2013-2015 <a href="http://ieden.gitcafe.com">Eden Harder</a>

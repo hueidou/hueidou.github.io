@@ -249,9 +249,6 @@ table td {
   cursor: pointer;
 }
 
-.container a:link{
-    color: transparent;
-}
 
 /*------PARAGRAPH------*/
 .container li p {
@@ -265,6 +262,10 @@ table td {
   left: 0;
   text-align: center;
   text-transform: uppercase;
+}
+
+.container li p a:link{
+    color: transparent;
 }
 
 .container li:hover p {

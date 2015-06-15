@@ -249,6 +249,10 @@ table td {
   cursor: pointer;
 }
 
+.container a:link{
+    color: transparent;
+}
+
 /*------PARAGRAPH------*/
 .container li p {
   position: absolute;
@@ -267,6 +271,9 @@ table td {
   color: white;
   background: rgba(0,0,0,0.7);
   z-index: 1;
+  margin: 0;
+  padding: 0;
+  outline: none;
 }
 
 /*------IMAGES------*/

@@ -223,3 +223,101 @@ table td {
       .site .footer .rss img {
         border: 0;
       }
+
+/*------CONTAINER------*/
+
+.container {
+  width: 1120px;
+  margin: 0 auto 50px auto;
+}
+
+/*------LIST------*/
+.container ul {
+  list-style-type: none;
+}
+
+.container li {
+  float: left;
+  position: relative;
+  width: 280px;
+  height: 187px;
+  overflow: hidden;
+}
+
+.container li:hover {
+  cursor: pointer;
+}
+
+/*------PARAGRAPH------*/
+.container li p {
+  position: absolute;
+  color: transparent;
+  font: 400 30px/187px 'Arvo', Helvetica, Arial, sans-serif;
+  background: transparent;
+  width: 280px;
+  height: 187px;
+  top: 0;
+  left: 0;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.container li:hover p {
+  color: white;
+  background: rgba(0,0,0,0.7);
+  z-index: 1;
+}
+
+/*------IMAGES------*/
+.container img {
+  width: 280px;
+  height: 187px;
+  -webkit-transition: all 0.7s ease;
+  -moz-transition: all 0.7s ease;
+  -o-transition: all 0.7s ease;
+  -ms-transition: all 0.7s ease;
+  transition: all 0.7s ease;
+}
+
+.container li:hover img {
+  -webkit-transform: scale(-1, 1);
+  -moz-transform: scale(0.501, 1);
+  -o-transform: scale(0.501, 1);
+  z-index: -3;
+}
+
+/*------MEDIA QUERIES------*/
+@media screen and (max-width: 1120px) {
+    .container {
+    width: 840px;
+  }
+}
+
+@media screen and (max-width: 840px) {
+    .container {
+    width: 560px;
+  }
+}
+
+@media screen and (max-width: 560px) {
+    .container {
+    width: 280px;
+  }
+}
+
+/*------CLEARFIX------*/
+/* For modern browsers */
+.cf:before,
+.cf:after {
+    content:"";
+    display:table;
+}
+
+.cf:after {
+    clear:both;
+}
+
+/* For IE 6/7 (trigger hasLayout) */
+.cf {
+    *zoom:1;
+}

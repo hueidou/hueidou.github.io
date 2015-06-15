@@ -228,7 +228,7 @@ table td {
 
 
 .container {
-  width: 1120px;
+  width: 1000px;
   margin: 0 auto 50px auto;
 }
 
@@ -240,7 +240,7 @@ table td {
 .container li {
   float: left;
   position: relative;
-  width: 280px;
+  width: 250px;
   height: 187px;
   overflow: hidden;
 }
@@ -256,7 +256,7 @@ table td {
   color: transparent;
   font: 400 30px/187px 'Arvo', Helvetica, Arial, sans-serif;
   background: transparent;
-  width: 280px;
+  width: 250px;
   height: 187px;
   top: 0;
   left: 0;
@@ -269,7 +269,7 @@ table td {
 }
 
 .container li:hover p a:link{
-    color: blue;
+    color: white;
 }
 
 .container li:hover p {
@@ -283,7 +283,7 @@ table td {
 
 /*------IMAGES------*/
 .container img {
-  width: 280px;
+  width: 250px;
   height: 187px;
   -webkit-transition: all 0.7s ease;
   -moz-transition: all 0.7s ease;
@@ -300,7 +300,7 @@ table td {
 }
 
 /*------MEDIA QUERIES------*/
-@media screen and (max-width: 1120px) {
+@media screen and (max-width: 1000px) {
     .container {
     width: 840px;
   }
@@ -308,13 +308,13 @@ table td {
 
 @media screen and (max-width: 840px) {
     .container {
-    width: 560px;
+    width: 500px;
   }
 }
 
-@media screen and (max-width: 560px) {
+@media screen and (max-width: 500px) {
     .container {
-    width: 280px;
+    width: 250px;
   }
 }
 

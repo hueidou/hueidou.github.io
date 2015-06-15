@@ -92,7 +92,7 @@ line-height: 1.45;
 position: relative;
 color: #483c32;
 border-left:2px solid #2B65EC;
-background: rgba(30,153,230,0.3);
+background: rgba(30,153,235,0.3);
 }
 
 blockquote cite {
@@ -240,7 +240,7 @@ table td {
 .container li {
   float: left;
   position: relative;
-  width: 230px;
+  width: 235px;
   height: 187px;
   overflow: hidden;
 }
@@ -256,7 +256,7 @@ table td {
   color: transparent;
   font: 400 30px/187px 'Arvo', Helvetica, Arial, sans-serif;
   background: transparent;
-  width: 230px;
+  width: 235px;
   height: 187px;
   top: 0;
   left: 0;
@@ -283,7 +283,7 @@ table td {
 
 /*------IMAGES------*/
 .container img {
-  width: 230px;
+  width: 235px;
   height: 187px;
   -webkit-transition: all 0.7s ease;
   -moz-transition: all 0.7s ease;
@@ -314,7 +314,7 @@ table td {
 
 @media screen and (max-width: 500px) {
     .container {
-    width: 230px;
+    width: 235px;
   }
 }
 

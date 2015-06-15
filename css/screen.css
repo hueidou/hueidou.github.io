@@ -271,6 +271,9 @@ table td {
 .container li:hover p a:link{
     color: white;
 }
+.container li:hover p a:visited{
+    color: orange;
+}
 
 .container li:hover p {
   color: white;

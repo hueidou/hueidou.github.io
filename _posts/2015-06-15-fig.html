@@ -1,24 +1,30 @@
----
-layout: figure
-title: Figures
-categories: [Plot]
-tags: [plot, Physics]
----
-
-<h1>{{ page.title }}</h1>
+<!DOCTYPE html>
+<head>
+    <link rel="stylesheet" href="screen.css">
+</head>
+<body>
 
 
-<div style="max-width:900px;margin:auto;padding:0 10px 50px"> 
+    <div style="max-width:900px;margin:auto;padding:0 10px 50px">
+  
+        <div id="demo2" class="flex-images">
+            <div class="item" data-w="219" data-h="180"><img src="/images/rss.png" data-src="/images/aircond.jpg"></div>
+            <div class="item" data-w="219" data-h="180"><img src="/images/rss.png" data-src="/images/aircond.jpg"></div>
+            <div class="item" data-w="219" data-h="180"><img src="/images/rss.png" data-src="/images/aircond.jpg"></div>
+            <div class="item" data-w="219" data-h="180"><img src="/images/rss.png" data-src="/images/aircond.jpg"></div>
+            <div class="item" data-w="219" data-h="180"><img src="/images/rss.png" data-src="/images/aircond.jpg"></div>
+            <div class="item" data-w="219" data-h="180"><img src="/images/rss.png" data-src="/images/aircond.jpg"></div>
+            <div class="item" data-w="219" data-h="180"><img src="/images/rss.png" data-src="/images/aircond.jpg"></div>
+            <div class="item" data-w="219" data-h="180"><img src="/images/rss.png" data-src="/images/aircond.jpg"></div>
+            <div class="item" data-w="219" data-h="180"><img src="/images/rss.png" data-src="/images/aircond.jpg"></div>
+            <div class="item" data-w="219" data-h="180"><img src="/images/rss.png" data-src="/images/aircond.jpg"></div>
+        </div>
 
-       <div id="demo5" class="flex-images">
-            <div class="item" data-w="219" data-h="180">
-                <img src="/images/rss.png" data-src="/images/aircond.jpg">
-                <div class="over">Caption 1</div>
-            </div>
-            <div class="item" data-w="219" data-h="180">
-                <img src="/images/rss.png" data-src="/images/aircond.jpg">
-                <div class="over">Caption 1</div>
-            </div>
+
+
+
+        <p style="margin:60px 0 8px">4. Overlaying caption - could be a link or a button, as well:</p>
+        <div id="demo5" class="flex-images">
             <div class="item" data-w="219" data-h="180">
                 <img src="/images/rss.png" data-src="/images/aircond.jpg">
                 <div class="over">Caption 1</div>
@@ -48,3 +54,25 @@ tags: [plot, Physics]
                 <div class="over">Caption 1</div>
             </div>
         </div>
+
+      
+       
+
+    <script src="https://code.jquery.com/jquery-1.11.1.min.js"></script>
+    <script src="imagewall.js/jquery.flex-images.js"></script>
+    <script>
+        $('#demo2').flexImages({rowHeight: 200, truncate: 1, maxRows: 5});
+        $('#demo5').flexImages({});
+
+        if (~window.location.href.indexOf('http')) {
+            (function() {var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;po.src = 'https://apis.google.com/js/plusone.js';var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);})();
+            (function(d, s, id) {var js, fjs = d.getElementsByTagName(s)[0];if (d.getElementById(id)) return;js = d.createElement(s); js.id = id;js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&appId=380275075435187&version=v2.0";fjs.parentNode.insertBefore(js, fjs);}(document, 'script', 'facebook-jssdk'));
+            !function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');
+            $('#github_social').html('\
+                <iframe style="float:left;margin-right:15px" src="//ghbtns.com/github-btn.html?user=Pixabay&repo=jQuery-flexImages&type=watch&count=true" allowtransparency="true" frameborder="0" scrolling="0" width="110" height="20"></iframe>\
+                <iframe style="float:left;margin-right:15px" src="//ghbtns.com/github-btn.html?user=Pixabay&repo=jQuery-flexImages&type=fork&count=true" allowtransparency="true" frameborder="0" scrolling="0" width="110" height="20"></iframe>\
+            ');
+        }
+    </script>
+</body>
+</html>

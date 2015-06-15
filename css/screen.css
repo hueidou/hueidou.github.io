@@ -226,6 +226,12 @@ table td {
 
 /*------CONTAINER------*/
 
+* {
+  margin: 0;
+  padding: 0;
+  outline: none;
+}
+
 .container {
   width: 1120px;
   margin: 0 auto 50px auto;

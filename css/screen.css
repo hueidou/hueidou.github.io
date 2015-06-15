@@ -233,7 +233,7 @@ table td {
 }
 
 .container {
-  width: 1000px;
+  width: 1120px;
   margin: 0 auto 50px auto;
 }
 
@@ -245,7 +245,7 @@ table td {
 .container li {
   float: left;
   position: relative;
-  width: 250px;
+  width: 280px;
   height: 187px;
   overflow: hidden;
 }
@@ -260,7 +260,7 @@ table td {
   color: transparent;
   font: 400 30px/187px 'Arvo', Helvetica, Arial, sans-serif;
   background: transparent;
-  width: 250px;
+  width: 280px;
   height: 187px;
   top: 0;
   left: 0;
@@ -276,7 +276,7 @@ table td {
 
 /*------IMAGES------*/
 .container img {
-  width: 250px;
+  width: 280px;
   height: 187px;
   -webkit-transition: all 0.7s ease;
   -moz-transition: all 0.7s ease;
@@ -293,7 +293,7 @@ table td {
 }
 
 /*------MEDIA QUERIES------*/
-@media screen and (max-width: 1000px) {
+@media screen and (max-width: 1120px) {
     .container {
     width: 840px;
   }
@@ -301,13 +301,13 @@ table td {
 
 @media screen and (max-width: 840px) {
     .container {
-    width: 500px;
+    width: 560px;
   }
 }
 
-@media screen and (max-width: 500px) {
+@media screen and (max-width: 560px) {
     .container {
-    width: 250px;
+    width: 280px;
   }
 }
 

@@ -238,6 +238,7 @@ table td {
 }
 
 .container li {
+  float: left;
   position: relative;
   width: 240px;
   height: 187px;

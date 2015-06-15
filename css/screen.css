@@ -223,3 +223,8 @@ table td {
       .site .footer .rss img {
         border: 0;
       }
+
+.flex-images { overflow: hidden; }
+.flex-images .item { float: left; margin: 4px; border: 1px solid #eee; box-sizing: content-box; overflow: hidden; position: relative;  }
+.flex-images .item img { display: block; width: auto; height: 100%; }
+#demo5 .over { position: absolute; bottom: 0; left: 0; right: 0; padding: 4px 6px; font-size: 13px; color: #fff; background: #222; background: rgba(0,0,0,.7); }

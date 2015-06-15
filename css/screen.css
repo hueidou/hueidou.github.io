@@ -238,9 +238,8 @@ table td {
 }
 
 .container li {
-  float: left;
   position: relative;
-  width: 220px;
+  width: 240px;
   height: 187px;
   overflow: hidden;
 }
@@ -256,7 +255,7 @@ table td {
   color: transparent;
   font: 400 30px/187px 'Arvo', Helvetica, Arial, sans-serif;
   background: transparent;
-  width: 220px;
+  width: 240px;
   height: 187px;
   top: 0;
   left: 0;
@@ -283,7 +282,7 @@ table td {
 
 /*------IMAGES------*/
 .container img {
-  width: 220px;
+  width: 240px;
   height: 187px;
   -webkit-transition: all 0.7s ease;
   -moz-transition: all 0.7s ease;
@@ -314,7 +313,7 @@ table td {
 
 @media screen and (max-width: 500px) {
     .container {
-    width: 220px;
+    width: 240px;
   }
 }
 

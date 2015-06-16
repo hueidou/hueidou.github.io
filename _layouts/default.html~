@@ -12,13 +12,12 @@
 
    <!-- Homepage CSS -->
    <link rel="stylesheet" href="/css/screen.css" type="text/css" media="screen, projection" />
-
+      <!-- image wall CSS -->
+   <link rel="stylesheet" href="jquery.flex-images.css">
 </head>
 <body>
 
-<p>
-<a href="http://github.com/edenharder"><img style="text-align:center;" src="http://x.papaapp.com/farm1/3711a6/53771e23/AFF24.png" alt="Fork me on GitHub" /></a>
-</p>
+</br>
 
 <p>
 <div class="site">
@@ -29,12 +28,8 @@
 </div>
 </p>
 
-<p>
-<a href="http://github.com/edenharder"><img style="text-align:center;" src="http://x.papaapp.com/farm1/3711a6/c5021613/F6EAC.png" alt="Fork me on GitHub" /></a>
-</p>
-
 <div class="site">
- 
+</br> 
   {{ content }}
   
   <div class="footer">
@@ -60,4 +55,26 @@
 </div>
 
 </body>
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.0/jquery.min.js"></script>
+<script src="/assets/bootstrap/js/bootstrap.min.js"></script>
+<!-- MathJax Section -->
+<script type="text/javascript"
+ src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+<script>
+  MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [['$','$'],['\\(','\\)']],
+      skipTags: ['script', 'noscript', 'style', 'textarea', 'pre']
+    }
+  });
+  MathJax.Hub.Queue(function() {
+      var all = MathJax.Hub.getAllJax(), i;
+      for(i=0; i < all.length; i += 1) {
+          all[i].SourceElement().parentNode.className += ' has-jax';
+      }
+  });
+</script>
+
+
 </html>

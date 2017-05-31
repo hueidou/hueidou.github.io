@@ -49,7 +49,7 @@ a, em {
     padding-right: 4px;
     text-decoration: none;
     transition: background-color 0.5s, color 0.5s;
-    color: #333;
+    color: #222;
 }
 
 a:hover {
@@ -102,7 +102,7 @@ ol {
 
 p {
     font-weight: 300;
-    color: #888;
+    color: #333;
 }
 
 .type, .arxiv {
@@ -111,6 +111,6 @@ p {
 }
 
 address {
-    color: #888;
+    color: #444;
     padding-left: 20px;
 }

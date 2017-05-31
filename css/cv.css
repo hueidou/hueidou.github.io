@@ -85,11 +85,13 @@ a:before {
 }
 
 ol {
-    font-size: 20px;
+    font-size: 19px;
     font-weight: 400;
 }
 
 .title {
+    font-weight: 400;
+    font-size: 22px;
     font-weight: 400;
     background-color: transparent;
     color: #222;
